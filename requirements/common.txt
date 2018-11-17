@@ -1,0 +1,5 @@
+requests[security] >= 2.20; python_version < "3.0"
+pytest >= 3.4
+pytest-mock >= 1.7
+pytest-xdist >= 1.22
+pytest-cov >= 2.5

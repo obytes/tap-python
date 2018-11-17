@@ -1,0 +1,9 @@
+version: "2"
+services:
+  app:
+    build: .
+    restart: on-failure
+    volumes:
+      - .:/opt/app
+    command: >
+      bash -c "pytest tests/"
