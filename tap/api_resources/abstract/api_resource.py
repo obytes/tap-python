@@ -1,23 +1,25 @@
+from __future__ import absolute_import, division, print_function
+
+from tap import error, util, six
 from tap.tap_object import TapObject
-from tap import six
-from tap import util
-from tap import error
 from urllib.parse import quote_plus
+
+
 class APIResource(TapObject):
 
-    @classmethod
-    def retrieve(cls, id, api_key=None, **params):
-        instance = cls(id, api_key, **params)
-        instance.refresh()
-        return instance
+    # @classmethod
+    # def retrieve(cls, id, api_key=None, **params):
+    #     instance = cls(id, api_key, **params)
+    #     instance.refresh()
+    #     return instance
+    #
+    # def refresh(self):
+    #     url = self.get_instance_url()
+    #     resp = self.request('get', url)
+    #     self.refresh_from(resp)
+    #     return self
 
-    def refresh(self):
-        url = self.get_instance_url()
-        resp = self.request('get', url)
-        self.refresh_from(resp)
-        return self
-
-    def get_instance_url(self):
+    def instance_url(self):
         id = self.get('id')
 
         if not isinstance(id, six.string_types):
