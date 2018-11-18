@@ -1,11 +1,8 @@
-
 import tap
 from tap import error
 from tap import http_client
 import util
 import six
-
-
 import calendar
 import datetime
 import time
@@ -71,7 +68,6 @@ def _api_encode(data):
             yield (key, _encode_datetime(value))
         else:
             yield (key, util.utf8(value))
-
 
 
 class APIRequestor(object):
