@@ -15,8 +15,8 @@ class Customer(ListeableAPIResource, CreateableAPIResource,
 
     def delete_discount(self, **params):
         requestor = api_requestor.APIRequestor(self.api_key,
-                                               api_version=self.stripe_version,
-                                               account=self.stripe_account)
+                                               api_version=self.tap_version,
+                                               account=self.tap_account)
         url = self.instance_url() + '/discount'
         _, api_key = requestor.request('delete', url, params)
         self.refresh_from({'discount': None}, api_key, True)

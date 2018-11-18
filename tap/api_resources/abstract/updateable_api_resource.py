@@ -8,14 +8,14 @@ from urllib.parse import quote_plus
 class UpdateableAPIResource(APIResource):
 
     @classmethod
-    def _modify(cls, url, api_key=None, stripe_version=None,
-                stripe_account=None, **params):
+    def _modify(cls, url, api_key=None, tap_version=None,
+                tap_account=None, **params):
 
-        requestor = api_requestor.APIRequestor(api_key, api_version=stripe_version,
-                                               account=stripe_account)
+        requestor = api_requestor.APIRequestor(api_key, api_version=tap_version,
+                                               account=tap_account)
 
         response, api_key = requestor.request('post', url, params)
-        return util.convert_to_tap_object(response, api_key, stripe_version, stripe_account)
+        return util.convert_to_tap_object(response, api_key, tap_version, tap_account)
 
     @classmethod
     def modify(cls, sid, **params):

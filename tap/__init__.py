@@ -1,8 +1,8 @@
 api_key = None
 client_id = None
-api_base = 'https://api.stripe.com'
-connect_api_base = 'https://connect.stripe.com'
-upload_api_base = 'https://files.stripe.com'
+api_base = 'https://api.tap.com'
+connect_api_base = 'https://connect.tap.com'
+upload_api_base = 'https://files.tap.com'
 api_version = None
 verify_ssl_certs = True
 proxy = None

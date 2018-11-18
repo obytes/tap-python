@@ -15,7 +15,7 @@ class BaseError(Exception):
                 http_body = http_body.decode('utf-8')
             except BaseException:
                 http_body = ('<Could not decode body as utf-8. '
-                             'Please report to support@stripe.com>')
+                             'Please report to support@tap.com>')
 
         self._message = message
         self.http_body = http_body
@@ -33,7 +33,7 @@ class BaseError(Exception):
             return msg
 
     # Returns the underlying `Exception` (base class) message, which is usually
-    # the raw message returned by Stripe's API. This was previously available
+    # the raw message returned by Tap's API. This was previously available
     # in python2 via `error.message`. Unlike `str(error)`, it omits "Request
     # req_..." from the beginning of the string.
     @property

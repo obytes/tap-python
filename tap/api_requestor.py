@@ -53,8 +53,8 @@ def _api_encode(data):
         key = util.utf8(key)
         if value is None:
             continue
-        elif hasattr(value, 'stripe_id'):
-            yield (key, value.stripe_id)
+        elif hasattr(value, 'tap_id'):
+            yield (key, value.tap_id)
         elif isinstance(value, list) or isinstance(value, tuple):
             for i, sv in enumerate(value):
                 if isinstance(sv, dict):
@@ -109,9 +109,9 @@ class APIRequestor(object):
         if my_api_key is None:
             raise error.AuthenticationError(
                 'No API key provided. (HINT: set your API key using '
-                '"stripe.api_key = <API-KEY>"). You can generate API keys '
-                'from the Stripe web interface.  See https://stripe.com/api '
-                'for details, or email support@stripe.com if you have any '
+                '"tap.api_key = <API-KEY>"). You can generate API keys '
+                'from the Tap web interface.  See https://tap.com/api '
+                'for details, or email support@tap.com if you have any '
                 'questions.')
 
         abs_url = '%s%s' % (self.api_base, url)
@@ -147,7 +147,7 @@ class APIRequestor(object):
         else:
             raise error.APIConnectionError(
                 'Unrecognized HTTP method %r.  This may indicate a bug in the '
-                'Stripe bindings.  Please contact support@stripe.com for '
+                'Tap bindings.  Please contact support@tap.com for '
                 'assistance.' % (method,))
 
         headers = self.request_headers(my_api_key, method)
@@ -155,7 +155,7 @@ class APIRequestor(object):
             for key, value in six.iteritems(supplied_headers):
                 headers[key] = value
 
-        util.log_info('Request to Stripe api', method=method, path=abs_url)
+        util.log_info('Request to Tap api', method=method, path=abs_url)
         util.log_debug(
             'Post details',
             post_data=encoded_params, api_version=self.api_version)
@@ -164,7 +164,7 @@ class APIRequestor(object):
             method, abs_url, headers, post_data)
 
         util.log_info(
-            'Stripe API response', path=abs_url, response_code=rcode)
+            'Tap API response', path=abs_url, response_code=rcode)
         util.log_debug('API response body', body=rbody)
         # if 'Request-Id' in rheaders:
         #     util.log_debug('Dashboard link for request',

@@ -22,12 +22,12 @@ else:
     else:
         if (major, minor, patch) < (0, 8, 8):
             sys.stderr.write(
-                'Warning: the Stripe library requires that your Python '
+                'Warning: the Tap library requires that your Python '
                 '"requests" library be newer than version 0.8.8, but your '
-                '"requests" library is version %s. Stripe will fall back to '
+                '"requests" library is version %s. Tap will fall back to '
                 'an alternate HTTP library so everything should work. We '
                 'recommend upgrading your "requests" library. If you have any '
-                'questions, please contact support@stripe.com. (HINT: running '
+                'questions, please contact support@tap.com. (HINT: running '
                 '"pip install -U requests" should upgrade your requests '
                 'library to the latest version.)' % (version,))
             requests = None
@@ -157,7 +157,7 @@ class RequestsClient(HTTPClient):
             except TypeError as e:
                 raise TypeError(
                     'Warning: It looks like your installed version of the '
-                    '"requests" library is not compatible with Stripe\'s '
+                    '"requests" library is not compatible with Tap\'s '
                     'usage thereof. (HINT: The most likely cause is that '
                     'your "requests" library is out of date. You can fix '
                     'that by running "pip install -U requests".) The '
@@ -179,32 +179,32 @@ class RequestsClient(HTTPClient):
         # Catch SSL error first as it belongs to ConnectionError,
         # but we don't want to retry
         if isinstance(e, requests.exceptions.SSLError):
-            msg = ("Could not verify Stripe's SSL certificate.  Please make "
+            msg = ("Could not verify Tap's SSL certificate.  Please make "
                    "sure that your network is not intercepting certificates.  "
                    "If this problem persists, let us know at "
-                   "support@stripe.com.")
+                   "support@tap.com.")
             err = "%s: %s" % (type(e).__name__, str(e))
             should_retry = False
         # Retry only timeout and connect errors; similar to urllib3 Retry
         elif isinstance(e, requests.exceptions.Timeout) or \
                 isinstance(e, requests.exceptions.ConnectionError):
-            msg = ("Unexpected error communicating with Stripe.  "
+            msg = ("Unexpected error communicating with Tap.  "
                    "If this problem persists, let us know at "
-                   "support@stripe.com.")
+                   "support@tap.com.")
             err = "%s: %s" % (type(e).__name__, str(e))
             should_retry = True
         # Catch remaining request exceptions
         elif isinstance(e, requests.exceptions.RequestException):
-            msg = ("Unexpected error communicating with Stripe.  "
+            msg = ("Unexpected error communicating with Tap.  "
                    "If this problem persists, let us know at "
-                   "support@stripe.com.")
+                   "support@tap.com.")
             err = "%s: %s" % (type(e).__name__, str(e))
             should_retry = False
         else:
-            msg = ("Unexpected error communicating with Stripe. "
+            msg = ("Unexpected error communicating with Tap. "
                    "It looks like there's probably a configuration "
                    "issue locally.  If this problem persists, let us "
-                   "know at support@stripe.com.")
+                   "know at support@tap.com.")
             err = "A %s was raised" % (type(e).__name__,)
             if str(e):
                 err += " with error message %s" % (str(e),)
