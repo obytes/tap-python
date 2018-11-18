@@ -2,10 +2,11 @@ from __future__ import absolute_import, division, print_function
 
 import tap
 from tap.tap_object import TapObject
+
 try:
-    from urlparse import quote_plus
+    from urllib import quote_plus  # Python 2.X
 except ImportError:
-    from urllib.parse import quote_plus
+    from urllib.parse import quote_plus  # Python 3+
 
 
 class APIResource(TapObject):
@@ -44,5 +45,5 @@ class APIResource(TapObject):
                 'from subclass of it')
 
         base = cls.OBJECT_NAME.replace('.', '/')
-        return "/v1/%ss" % (base,)
+        return "/v2/%ss" % (base,)
 

@@ -5,8 +5,7 @@ from tap.api_resources.abstract.updateable_api_resource import UpdateableAPIReso
 from tap.api_resources.abstract.deleteable_api_resource import DeleteableAPIResource
 from tap.api_resources.abstract.listeable_api_resource import ListeableAPIResource
 
-from tap import api_requestor
-
+import tap
 
 class Customer(ListeableAPIResource, CreateableAPIResource,
                UpdateableAPIResource, DeleteableAPIResource):
@@ -14,7 +13,7 @@ class Customer(ListeableAPIResource, CreateableAPIResource,
     OBJECT_NAME = 'customer'
 
     def delete_discount(self, **params):
-        requestor = api_requestor.APIRequestor(self.api_key,
+        requestor = tap.api_requestor.APIRequestor(self.api_key,
                                                api_version=self.tap_version,
                                                account=self.tap_account)
         url = self.instance_url() + '/discount'

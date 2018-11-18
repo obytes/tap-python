@@ -5,7 +5,10 @@ import os
 import tap
 
 
-tap.api_key = os.environ.get('TAP_SECRET_KEY')
+# tap.api_key = os.environ.get('TAP_SECRET_KEY')
+
+tap.api_key = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'
+
 
 print("Attempting charge...")
 

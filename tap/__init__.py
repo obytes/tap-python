@@ -1,8 +1,6 @@
-api_key = None
+api_key = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'
 client_id = None
-api_base = 'https://api.tap.com'
-connect_api_base = 'https://connect.tap.com'
-upload_api_base = 'https://files.tap.com'
+api_base = 'https://api.tap.company'
 api_version = None
 verify_ssl_certs = True
 proxy = None
@@ -14,4 +12,4 @@ max_network_retries = 0
 log = None
 
 
-# from api_resources.customer import Customer
+from api_resources.customer import Customer
