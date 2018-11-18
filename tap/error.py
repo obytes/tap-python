@@ -71,3 +71,42 @@ class PermissionError(BaseError):
 
 class RateLimitError(BaseError):
     pass
+
+
+
+class BaseErrorWithParamCode(BaseError):
+
+    def __repr__(self):
+        return ('%s(message=%r, param=%r, code=%r, http_status=%r, '
+                'request_id=%r)' % (
+                    self.__class__.__name__,
+                    self._message,
+                    self.param,
+                    self.code,
+                    self.http_status,
+                    self.request_id))
+
+
+class CardError(BaseErrorWithParamCode):
+
+    def __init__(self, message, param, code, http_body=None,
+                 http_status=None, json_body=None, headers=None):
+        super(CardError, self).__init__(
+            message, http_body, http_status, json_body,
+            headers, code)
+        self.param = param
+
+
+class IdempotencyError(BaseError):
+    pass
+
+
+class InvalidRequestError(BaseErrorWithParamCode):
+
+    def __init__(self, message, param, code=None, http_body=None,
+                 http_status=None, json_body=None, headers=None):
+        super(InvalidRequestError, self).__init__(
+            message, http_body, http_status, json_body,
+            headers, code)
+        self.param = param
+

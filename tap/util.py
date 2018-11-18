@@ -6,6 +6,8 @@ import os
 import re
 import tap
 from tap import six
+from tap.response import ApiResponse
+import types
 
 
 TAP_LOG = os.environ.get('TAP_LOG')
@@ -70,3 +72,45 @@ def utf8(value):
     else:
         return value
 
+
+def populate_headers(idempotency_key):
+    if idempotency_key is not None:
+        return {"Idempotency-Key": idempotency_key}
+    return None
+
+OBJECT_CLASSES = {}
+
+def load_classes():
+    from tap.api_resources.customer import Customer
+
+    return {
+        Customer.OBJECT_NAME: Customer
+    }
+
+def convert_to_tap_object(response, api_key=None, tap_version=None,
+                          tap_account=None):
+
+    from tap.tap_object import TapObject
+    global OBJECT_CLASSES
+
+    if len(OBJECT_CLASSES) == 0:
+        OBJECT_CLASSES = load_classes()
+
+    if isinstance(response, ApiResponse):
+        tap_response = response
+        resp = response.data
+
+    if isinstance(resp, list):
+        return [convert_to_tap_object(i, api_key, tap_version,
+                                      tap_account) for i in resp]
+
+    elif isinstance(resp, dict) and not isinstance(resp, TapObject):
+        class_name = resp.get('object')
+        types = OBJECT_CLASSES.copy()
+        if class_name:
+            kclass = types.get(class_name.OBJECT_NAME, TapObject)
+        else:
+            kclass = TapObject
+
+        return kclass(api_key=api_key, tap_version=tap_version,
+                        tap_account=tap_account)

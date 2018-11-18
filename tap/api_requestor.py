@@ -11,7 +11,16 @@ import datetime
 import time
 import uuid
 from response import ApiResponse
-from urllib.parse import urlencode, urlsplit, urlunsplit
+
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
+
+try:
+    from urlparse import urlsplit, urlunsplit
+except ImportError:
+    from urllib.parse import urlsplit, urlunsplit
 
 
 def _build_api_url(url, query):
