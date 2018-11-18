@@ -1,13 +1,16 @@
-import tap
-from tap import error
-from tap import http_client
-import util
-import six
+from __future__ import absolute_import, division, print_function
+
 import calendar
 import datetime
+import json
+import platform
 import time
 import uuid
-from response import ApiResponse
+
+import tap
+from tap import error, http_client, util, six
+from tap.response import ApiResponse
+
 
 try:
     from urllib import urlencode

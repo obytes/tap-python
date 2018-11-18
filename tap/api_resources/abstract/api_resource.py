@@ -1,8 +1,11 @@
 from __future__ import absolute_import, division, print_function
 
-from tap import error, util, six
+import tap
 from tap.tap_object import TapObject
-from urllib.parse import quote_plus
+try:
+    from urlparse import quote_plus
+except ImportError:
+    from urllib.parse import quote_plus
 
 
 class APIResource(TapObject):
@@ -22,13 +25,13 @@ class APIResource(TapObject):
     def instance_url(self):
         id = self.get('id')
 
-        if not isinstance(id, six.string_types):
-            raise error.InvalidRequestError(
+        if not isinstance(id, tap.six.string_types):
+            raise tap.error.InvalidRequestError(
                 'could not determine wich url to request : instance %s'
                 ' has invalid ID %r, %s ID should be type `str`'
                 % (type(self).__name__, type(id), 'id'))
 
-        id = util.utf8(id)
+        id = tap.util.utf8(id)
         base = self.class_url()
         extn = quote_plus(id)
         return '%s/%s' % (base, extn)

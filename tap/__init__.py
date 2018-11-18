@@ -14,4 +14,4 @@ max_network_retries = 0
 log = None
 
 
-from api_resources.customer import Customer
+# from api_resources.customer import Customer
