@@ -6,9 +6,9 @@ import json
 import platform
 import time
 import uuid
+from tap import http_client
 
 import tap
-from tap import error, http_client, util, six
 from tap.response import ApiResponse
 
 
@@ -34,7 +34,7 @@ def _build_api_url(url, query):
 
 def _encode_nested_dict(key, data, fmt='%s[%s]'):
     d = {}
-    for subkey, subvalue in six.iteritems(data):
+    for subkey, subvalue in tap.six.iteritems(data):
         d[fmt % (key, subkey)] = subvalue
     return d
 
@@ -49,8 +49,8 @@ def _encode_datetime(dttime):
 
 
 def _api_encode(data):
-    for key, value in six.iteritems(data):
-        key = util.utf8(key)
+    for key, value in tap.six.iteritems(data):
+        key = tap.util.utf8(key)
         if value is None:
             continue
         elif hasattr(value, 'tap_id'):
@@ -62,7 +62,7 @@ def _api_encode(data):
                     for k, v in _api_encode(subdict):
                         yield (k, v)
                 else:
-                    yield ("%s[%d]" % (key, i), util.utf8(sv))
+                    yield ("%s[%d]" % (key, i), tap.util.utf8(sv))
         elif isinstance(value, dict):
             subdict = _encode_nested_dict(key, value)
             for subkey, subvalue in _api_encode(subdict):
@@ -70,7 +70,7 @@ def _api_encode(data):
         elif isinstance(value, datetime.datetime):
             yield (key, _encode_datetime(value))
         else:
-            yield (key, util.utf8(value))
+            yield (key, tap.util.utf8(value))
 
 
 class APIRequestor(object):
@@ -140,32 +140,32 @@ class APIRequestor(object):
                 # post_data = generator.get_post_data()
                 # supplied_headers["Content-Type"] = \
                 #     "multipart/form-data; boundary=%s" % (generator.boundary,)
-                raise error.APIConnectionError(
+                raise tap.error.APIConnectionError(
                     'Multipart is not supported for now ...')
             else:
                 post_data = encoded_params
         else:
-            raise error.APIConnectionError(
+            raise tap.error.APIConnectionError(
                 'Unrecognized HTTP method %r.  This may indicate a bug in the '
                 'Tap bindings.  Please contact support@tap.com for '
                 'assistance.' % (method,))
 
         headers = self.request_headers(my_api_key, method)
         if supplied_headers is not None:
-            for key, value in six.iteritems(supplied_headers):
+            for key, value in tap.six.iteritems(supplied_headers):
                 headers[key] = value
 
-        util.log_info('Request to Tap api', method=method, path=abs_url)
-        util.log_debug(
+        tap.util.log_info('Request to Tap api', method=method, path=abs_url)
+        tap.util.log_debug(
             'Post details',
             post_data=encoded_params, api_version=self.api_version)
 
         rbody, rcode, rheaders = self._client.request_with_retries(
             method, abs_url, headers, post_data)
 
-        util.log_info(
+        tap.util.log_info(
             'Tap API response', path=abs_url, response_code=rcode)
-        util.log_debug('API response body', body=rbody)
+        tap.util.log_debug('API response body', body=rbody)
         # if 'Request-Id' in rheaders:
         #     util.log_debug('Dashboard link for request',
         #                    link=util.dashboard_link(rheaders['Request-Id']))
@@ -190,7 +190,7 @@ class APIRequestor(object):
                 rbody = rbody.decode('utf-8')
             resp = ApiResponse(rbody, rcode, rheaders)
         except Exception:
-            raise error.APIError(
+            raise tap.error.APIError(
                 "Invalid response body from API: %s "
                 "(HTTP response code was %d)" % (rbody, rcode),
                 rbody, rcode, rheaders)
@@ -203,7 +203,7 @@ class APIRequestor(object):
         try:
             error_data = resp['error']
         except (KeyError, TypeError):
-            raise error.APIError(
+            raise tap.error.APIError(
                 "Invalid response object from API: %r (HTTP response code "
                 "was %d)" % (rbody, rcode),
                 rbody, rcode, resp)

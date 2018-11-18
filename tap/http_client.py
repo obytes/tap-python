@@ -5,7 +5,7 @@ import sys
 import textwrap
 import time
 import random
-from tap import error, util
+import tap
 
 try:
     import requests
@@ -61,17 +61,17 @@ class HTTPClient(object):
                 num_retries += 1
                 response = self.request(method, url, headers, post_data)
                 connection_error = None
-            except error.APIConnectionError as e:
+            except tap.error.APIConnectionError as e:
                 connection_error = e
                 response = None
 
             if self._should_retry(response, connection_error, num_retries):
                 if connection_error:
-                    util.log_info("Encountered a retryable error %s" %
+                    tap.util.log_info("Encountered a retryable error %s" %
                                   connection_error.user_message)
 
                 sleep_time = self._sleep_time_seconds(num_retries)
-                util.log_info(("Initiating retry %i for request %s %s after "
+                tap.util.log_info(("Initiating retry %i for request %s %s after "
                                "sleeping %.2f seconds." %
                                (num_retries, method, url, sleep_time)))
                 time.sleep(sleep_time)
@@ -213,7 +213,7 @@ class RequestsClient(HTTPClient):
             should_retry = False
 
         msg = textwrap.fill(msg) + "\n\n(Network error: %s)" % (err,)
-        raise error.APIConnectionError(msg, should_retry=should_retry)
+        raise tap.error.APIConnectionError(msg, should_retry=should_retry)
 
     def close(self):
         if self._session is not None:

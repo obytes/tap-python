@@ -5,7 +5,7 @@ import sys
 import os
 import re
 import tap
-from tap import six
+import tap
 from tap.response import ApiResponse
 
 
@@ -48,14 +48,14 @@ def _test_or_live_environment():
 def logfmt(props):
     def fmt(key, val):
         # Handle case where val is a bytes or bytesarray
-        if six.PY3 and hasattr(val, 'decode'):
+        if tap.six.PY3 and hasattr(val, 'decode'):
             val = val.decode('utf-8')
         # Check if val is already a string to avoid re-encoding into
         # ascii. Since the code is sent through 2to3, we can't just
         # use unicode(val, encoding='utf8') since it will be
         # translated incorrectly.
-        if not isinstance(val, six.string_types):
-            val = six.text_type(val)
+        if not isinstance(val, tap.six.string_types):
+            val = tap.six.text_type(val)
         if re.search(r'\s', val):
             val = repr(val)
         # key should already be a string
@@ -66,7 +66,7 @@ def logfmt(props):
 
 
 def utf8(value):
-    if six.PY2 and isinstance(value, six.text_type):
+    if tap.six.PY2 and isinstance(value, tap.six.text_type):
         return value.encode('utf-8')
     else:
         return value
@@ -100,15 +100,18 @@ def convert_to_tap_object(resp, api_key=None, tap_version=None,
         tap_response = resp
         resp = resp.data
 
+    import pdb;
+    pdb.set_trace()
     if isinstance(resp, list):
         return [convert_to_tap_object(i, api_key, tap_version,
                                       tap_account) for i in resp]
+
 
     elif isinstance(resp, dict) and not isinstance(resp, TapObject):
         class_name = resp.get('object')
         types = OBJECT_CLASSES.copy()
         if class_name:
-            kclass = types.get(class_name.OBJECT_NAME, TapObject)
+            kclass = types.get(class_name, TapObject)
         else:
             kclass = TapObject
 
