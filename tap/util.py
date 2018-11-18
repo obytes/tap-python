@@ -7,7 +7,6 @@ import re
 import tap
 from tap import six
 from tap.response import ApiResponse
-import types
 
 
 TAP_LOG = os.environ.get('TAP_LOG')
@@ -87,7 +86,8 @@ def load_classes():
         Customer.OBJECT_NAME: Customer
     }
 
-def convert_to_tap_object(response, api_key=None, tap_version=None,
+
+def convert_to_tap_object(resp, api_key=None, tap_version=None,
                           tap_account=None):
 
     from tap.tap_object import TapObject
@@ -96,9 +96,9 @@ def convert_to_tap_object(response, api_key=None, tap_version=None,
     if len(OBJECT_CLASSES) == 0:
         OBJECT_CLASSES = load_classes()
 
-    if isinstance(response, ApiResponse):
-        tap_response = response
-        resp = response.data
+    if isinstance(resp, ApiResponse):
+        tap_response = resp
+        resp = resp.data
 
     if isinstance(resp, list):
         return [convert_to_tap_object(i, api_key, tap_version,
