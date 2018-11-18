@@ -12,3 +12,6 @@ max_network_retries = 0
 
 # Set to either 'debug' or 'info', controls console logging
 log = None
+
+
+from api_resources.customer import Customer

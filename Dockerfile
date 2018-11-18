@@ -11,10 +11,8 @@ RUN apk add --update curl \
                      imagemagick-dev
 
 # build-base
-COPY requirements/common.txt /opt/pip/requirements/common.txt
-RUN pip install -r /opt/pip/requirements/common.txt
+COPY requirements.txt /opt/pip/requirements.txt
+RUN pip install -r /opt/pip/requirements.txt
 
 ADD . /opt/app
 WORKDIR /opt/app
-
-EXPOSE 8000
