@@ -16,7 +16,10 @@ value:
 
 ``` python
 >>> import tap
+>>>
+>>> # tap.api_key = os.environ.get('TAP_SECRET_KEY')
 >>> tap.api_key = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'
+>>>
 >>> resp = tap.Customer.create(
 ...     first_name='first name',
 ...     last_name='last name',
@@ -24,13 +27,20 @@ value:
 ...     currency='usd',
 ...     nationality='Moroccan'
 ... )
-> /opt/app/tap/util.py(105)convert_to_tap_object()
--> if isinstance(resp, list):
-
-(Pdb) tap_response
-<tap.response.ApiResponse instance at 0x7f6b04e55128>
-
-(Pdb) tap_response.body
-u'{"id":"cus_Mk452018220Mn541888711","object":"customer","live_mode":false,"created":"1542578436122","currency":"usd","nationality":"Moroccan","first_name":"first name","last_name":"last name","email":"customer@gmail.com"}'
+>>>
+>>> print('Success: %r' % (resp))
+Success: <Customer customer id=cus_k9RY2018525q5LP1962511 at 0x7f2a495e5990> JSON: {
+  "created": "1542605100879",
+  "currency": "usd",
+  "email": "customer@gmail.com",
+  "first_name": "first name",
+  "id": "cus_k9RY2018525q5LP1962511",
+  "last_name": "last name",
+  "live_mode": false,
+  "nationality": "Moroccan",
+  "object": "customer",
+  "stripe_account": null,
+  "stripe_version": null
+}
 ```
 
