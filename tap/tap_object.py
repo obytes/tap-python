@@ -9,11 +9,13 @@ class TapObject(dict):
     def __init__(self, id=None, api_key=None, tap_version=None,
                  tap_account=None, **params):
 
-        object.__setattr__(self, 'id', id)
         object.__setattr__(self, 'api_key', api_key)
         object.__setattr__(self, 'tap_version', tap_version)
         object.__setattr__(self, 'tap_account', tap_account)
         object.__setattr__(self, 'params', params)
+
+        if id:
+            self['id'] = id
 
         super(TapObject, self).__init__()
 
@@ -49,6 +51,12 @@ class TapObject(dict):
 
         super(TapObject, self).__setitem__(k, v)
 
+    def __getitem__(self, k):
+        try:
+            return super(TapObject, self).__getitem__(k)
+        except KeyError as err:
+            raise err
+
     def __repr__(self):
         ident_parts = [type(self).__name__]
 
@@ -83,11 +91,38 @@ class TapObject(dict):
     def request(self, method, url, params=None, headers=None):
 
         requestor = api_requestor.APIRequestor(
-            key=self.api_key, api_base=self.api_base(),
-            api_version=self.tap_version, account=self.tap_account)
+            key=self.api_key, api_version=self.tap_version, account=self.tap_account)
 
         response, api_key = requestor.request(method, url, params, headers)
 
         return util.convert_to_tap_object(response, api_key,
                                           self.tap_version,
                                           self.tap_account)
+
+    @classmethod
+    def construct_from(cls, values, api_key=None, tap_version=None,
+                       tap_account=None):
+
+        instance = cls(values.get('id'), api_key=api_key,
+                       stripe_version=tap_version,
+                       stripe_account=tap_account)
+        instance.refresh_from(values, api_key=api_key,
+                              tap_version=tap_version,
+                              tap_account=tap_account)
+        return instance
+
+    def refresh_from(self, values, api_key=None, tap_version=None,
+                     tap_account=None):
+
+        self.api_key = \
+            api_key or getattr(values, 'api_key', None)
+
+        self.stripe_version = \
+            tap_version or getattr(values, 'tap_version', None)
+
+        self.stripe_account = \
+            tap_account or getattr(values, 'tap_account', None)
+
+        for k, v in six.iteritems(values):
+            super(TapObject, self).\
+                __setitem__(k, util.convert_to_tap_object(v, api_key, tap_version, tap_account))

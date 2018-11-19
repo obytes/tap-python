@@ -11,26 +11,26 @@ except ImportError:
 
 class APIResource(TapObject):
 
-    # @classmethod
-    # def retrieve(cls, id, api_key=None, **params):
-    #     instance = cls(id, api_key, **params)
-    #     instance.refresh()
-    #     return instance
-    #
-    # def refresh(self):
-    #     url = self.get_instance_url()
-    #     resp = self.request('get', url)
-    #     self.refresh_from(resp)
-    #     return self
+    @classmethod
+    def retrieve(cls, id, api_key=None, **params):
+        instance = cls(id, api_key, **params)
+        instance.refresh()
+        return instance
+
+    def refresh(self):
+        url = self.instance_url()
+        resp = self.request('get', url)
+        self.refresh_from(resp)
+        return self
 
     def instance_url(self):
         id = self.get('id')
 
-        if not isinstance(id, tap.six.string_types):
-            raise tap.error.InvalidRequestError(
-                'could not determine wich url to request : instance %s'
-                ' has invalid ID %r, %s ID should be type `str`'
-                % (type(self).__name__, type(id), 'id'))
+        # if not isinstance(id, tap.six.string_types):
+        #     raise tap.error.InvalidRequestError(
+        #         'could not determine wich url to request : instance %s'
+        #         ' has invalid ID %r, %s ID should be type `str`'
+        #         % (type(self).__name__, type(id), 'id'))
 
         id = tap.util.utf8(id)
         base = self.class_url()
