@@ -11,17 +11,17 @@ except ImportError:
 
 class APIResource(TapObject):
 
-    # @classmethod
-    # def retrieve(cls, id, api_key=None, **params):
-    #     instance = cls(id, api_key, **params)
-    #     instance.refresh()
-    #     return instance
-    #
-    # def refresh(self):
-    #     url = self.get_instance_url()
-    #     resp = self.request('get', url)
-    #     self.refresh_from(resp)
-    #     return self
+    @classmethod
+    def retrieve(cls, id, api_key=None, **params):
+        instance = cls(id, api_key, **params)
+        instance.refresh()
+        return instance
+
+    def refresh(self):
+        url = self.instance_url()
+        resp = self.request('get', url)
+        self.refresh_from(resp)
+        return self
 
     def instance_url(self):
         id = self.get('id')
