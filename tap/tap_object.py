@@ -91,3 +91,31 @@ class TapObject(dict):
         return util.convert_to_tap_object(response, api_key,
                                           self.tap_version,
                                           self.tap_account)
+
+    @classmethod
+    def construct_from(cls, values, api_key=None, tap_version=None,
+                       tap_account=None):
+
+        instance = cls(values.get('id'), api_key=api_key,
+                       stripe_version=tap_version,
+                       stripe_account=tap_account)
+        instance.refresh_from(values, api_key=api_key,
+                              tap_version=tap_version,
+                              tap_account=tap_account)
+        return instance
+
+    def refresh_from(self, values, api_key=None, tap_version=None,
+                     tap_account=None):
+
+        self.api_key = \
+            api_key or getattr(values, 'api_key', None)
+
+        self.stripe_version = \
+            tap_version or getattr(values, 'tap_version', None)
+
+        self.stripe_account = \
+            tap_account or getattr(values, 'tap_account', None)
+
+        for k, v in six.iteritems(values):
+            super(TapObject, self).\
+                __setitem__(k, util.convert_to_tap_object(v, api_key, tap_version, tap_account))

@@ -100,20 +100,21 @@ def convert_to_tap_object(resp, api_key=None, tap_version=None,
         tap_response = resp
         resp = resp.data
 
-    import pdb;
-    pdb.set_trace()
     if isinstance(resp, list):
         return [convert_to_tap_object(i, api_key, tap_version,
                                       tap_account) for i in resp]
 
-
     elif isinstance(resp, dict) and not isinstance(resp, TapObject):
-        class_name = resp.get('object')
+        klass_name = resp.get('object')
         types = OBJECT_CLASSES.copy()
-        if class_name:
-            kclass = types.get(class_name, TapObject)
-        else:
-            kclass = TapObject
 
-        return kclass(api_key=api_key, tap_version=tap_version,
-                        tap_account=tap_account)
+        if isinstance(klass_name, tap.six.string_types):
+            klass = types.get(klass_name, tap.tap_object.TapObject)
+        else:
+            klass = tap.tap_object.TapObject
+
+        return klass.construct_from(resp, api_key,
+                                    tap_version=tap_version,
+                                    tap_account=tap_account)
+    else:
+        return resp
