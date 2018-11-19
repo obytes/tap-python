@@ -26,11 +26,11 @@ class APIResource(TapObject):
     def instance_url(self):
         id = self.get('id')
 
-        if not isinstance(id, tap.six.string_types):
-            raise tap.error.InvalidRequestError(
-                'could not determine wich url to request : instance %s'
-                ' has invalid ID %r, %s ID should be type `str`'
-                % (type(self).__name__, type(id), 'id'))
+        # if not isinstance(id, tap.six.string_types):
+        #     raise tap.error.InvalidRequestError(
+        #         'could not determine wich url to request : instance %s'
+        #         ' has invalid ID %r, %s ID should be type `str`'
+        #         % (type(self).__name__, type(id), 'id'))
 
         id = tap.util.utf8(id)
         base = self.class_url()

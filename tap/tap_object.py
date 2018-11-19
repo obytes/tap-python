@@ -9,11 +9,13 @@ class TapObject(dict):
     def __init__(self, id=None, api_key=None, tap_version=None,
                  tap_account=None, **params):
 
-        object.__setattr__(self, 'id', id)
         object.__setattr__(self, 'api_key', api_key)
         object.__setattr__(self, 'tap_version', tap_version)
         object.__setattr__(self, 'tap_account', tap_account)
         object.__setattr__(self, 'params', params)
+
+        if id:
+            self['id'] = id
 
         super(TapObject, self).__init__()
 
@@ -49,6 +51,12 @@ class TapObject(dict):
 
         super(TapObject, self).__setitem__(k, v)
 
+    def __getitem__(self, k):
+        try:
+            return super(TapObject, self).__getitem__(k)
+        except KeyError as err:
+            raise err
+
     def __repr__(self):
         ident_parts = [type(self).__name__]
 
@@ -83,8 +91,7 @@ class TapObject(dict):
     def request(self, method, url, params=None, headers=None):
 
         requestor = api_requestor.APIRequestor(
-            key=self.api_key, api_base=self.api_base(),
-            api_version=self.tap_version, account=self.tap_account)
+            key=self.api_key, api_version=self.tap_version, account=self.tap_account)
 
         response, api_key = requestor.request(method, url, params, headers)
 
