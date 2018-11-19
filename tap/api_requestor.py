@@ -107,7 +107,7 @@ class APIRequestor(object):
             my_api_key = api_key
 
         if my_api_key is None:
-            raise error.AuthenticationError(
+            raise tap.error.AuthenticationError(
                 'No API key provided. (HINT: set your API key using '
                 '"tap.api_key = <API-KEY>"). You can generate API keys '
                 'from the Tap web interface.  See https://tap.com/api '
@@ -122,12 +122,11 @@ class APIRequestor(object):
         # characters back to their literals. This is fine by the server, and
         # makes these parameter strings easier to read.
         encoded_params = encoded_params.replace('%5B', '[').replace('%5D', ']')
-
         if method == 'get' or method == 'delete':
             if params:
                 abs_url = _build_api_url(abs_url, encoded_params)
             post_data = None
-        elif method == 'post':
+        elif method == 'post' or method == 'put':
             if supplied_headers is not None and \
                     supplied_headers.get("Content-Type") == \
                     "multipart/form-data":
@@ -178,7 +177,7 @@ class APIRequestor(object):
             'Authorization': 'Bearer %s' % (api_key,),
         }
 
-        if method == 'post':
+        if method == 'post' or 'put':
             headers['Content-Type'] = 'application/x-www-form-urlencoded'
             headers.setdefault('Idempotency-Key', str(uuid.uuid4()))
 
@@ -218,7 +217,7 @@ class APIRequestor(object):
         #         rbody, rcode, resp, rheaders, error_data)
 
         if err is None:
-            return error.APIError(
+            return tap.error.APIError(
                 error_data.get('message'), rbody, rcode, resp, rheaders)
 
         raise err
