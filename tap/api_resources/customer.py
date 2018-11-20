@@ -9,7 +9,7 @@ import tap
 
 @tap.api_resources.abstract.nested_resource_class_methods(
     'card',
-    operations=['create', 'retrieve', 'update', 'delete', 'list']
+    operations=['create', 'retrieve', 'delete', 'list']
 )
 class Customer(CreateableAPIResource,
                UpdateableAPIResource,
