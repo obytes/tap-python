@@ -7,6 +7,11 @@ from tap.api_resources.abstract.listeable_api_resource import ListeableAPIResour
 
 import tap
 
+
+@tap.api_resources.abstract.nested_resource_class_methods(
+    'card',
+    operations=['create', 'retrieve', 'update', 'delete', 'list']
+)
 class Customer(ListeableAPIResource, CreateableAPIResource,
                UpdateableAPIResource, DeleteableAPIResource):
 

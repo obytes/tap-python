@@ -34,3 +34,16 @@ resp = tap.Customer.modify(resp.id, **data)
 print('Success: %r' % (resp))
 
 
+# Updating customer
+data = {
+  "first_name": "test",
+  "last_name": "test",
+  "email": "test@test.com",
+  "nationality": "Amirican",
+  "currency": "USD"
+}
+resp = tap.Customer.modify(resp.id, **data)
+
+print('Success: %r' % (resp))
+
+
