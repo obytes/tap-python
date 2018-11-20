@@ -7,6 +7,7 @@ import platform
 import time
 import uuid
 from tap import http_client
+import tap.error
 
 import tap
 from tap.response import ApiResponse

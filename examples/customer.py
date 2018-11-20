@@ -26,7 +26,6 @@ print('Success: %r' % (resp))
 # Customer Update
 ######################
 data = {
-  "first_name": "test",
   "last_name": "test",
   "email": "test@test.com",
   "nationality": "Amirican",
