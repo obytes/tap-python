@@ -22,3 +22,5 @@ celerybeat-schedule
 tmp/
 .coverage
 coverage.*
+dist/*
+tap.egg-info/*

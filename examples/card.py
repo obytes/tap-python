@@ -44,7 +44,6 @@ customer_id = resp.id
 ######################
 # Create Card
 ######################
-
 resp = tap.Customer.create_card(resp.id, **{'source': token_id})
 card_id = resp.id
 
@@ -61,7 +60,24 @@ tap.Customer.retrieve_card(customer_id, card_id)
 tap.Customer.list_cards(customer_id)
 
 ######################
-# delete Card
+# Create Charge
 ######################
+data = {
+  "amount": 10,
+  "currency": "KWD",
+  "customer": {
+    "id": customer_id
+  },
+  "source": {
+    "id": "src_all"
+  },
+  "post": {
+    "url": "http://your_website.com/post_url"
+  },
+  "redirect": {
+    "url": "http://your_website.com/redirect_url"
+  }
+}
 
-tap.Customer.delete_card(customer_id, card_id)
+resp = tap.Charge.create(**data)
+print('Success: %r' % (resp))

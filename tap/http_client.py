@@ -41,7 +41,7 @@ class HTTPClient(object):
     MAX_DELAY = 2
     INITIAL_DELAY = 0.5
 
-    def __init__(self, verify_ssl_certs=True, proxy=None):
+    def __init__(self, verify_ssl_certs=False, proxy=None):
         self._verify_ssl_certs = verify_ssl_certs
         if proxy:
             if type(proxy) is str:
@@ -62,7 +62,6 @@ class HTTPClient(object):
                 response = self.request(method, url, headers, post_data)
                 connection_error = None
             except tap.error.APIConnectionError as e:
-                import pdb;pdb.set_trace()
                 connection_error = e
                 response = None
 
