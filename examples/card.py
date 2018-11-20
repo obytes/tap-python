@@ -39,9 +39,29 @@ data = {
 }
 
 resp = tap.Customer.create(**data)
+customer_id = resp.id
 
 ######################
-# Card Creation
+# Create Card
 ######################
 
-tap.Customer.create_card(resp.id, **{'source': token_id})
+resp = tap.Customer.create_card(resp.id, **{'source': token_id})
+card_id = resp.id
+
+######################
+# retrieve Card
+######################
+
+tap.Customer.retrieve_card(customer_id, card_id)
+
+######################
+# list Card
+######################
+
+tap.Customer.list_cards(customer_id)
+
+######################
+# delete Card
+######################
+
+tap.Customer.delete_card(customer_id, card_id)
