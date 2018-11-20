@@ -62,6 +62,7 @@ class HTTPClient(object):
                 response = self.request(method, url, headers, post_data)
                 connection_error = None
             except tap.error.APIConnectionError as e:
+                import pdb;pdb.set_trace()
                 connection_error = e
                 response = None
 
