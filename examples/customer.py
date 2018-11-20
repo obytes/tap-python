@@ -7,21 +7,24 @@ import tap
 
 tap.api_key = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'
 
+######################
+# Customer Creation
+######################
+data = {
+  "first_name": "test",
+  "last_name": "test",
+  "email": "test@test.com",
+  "nationality": "Moroccan",
+  "currency": "MAD"
+}
 
-print("Attempting charge...")
-
-resp = tap.Customer.create(
-    first_name='first name',
-    last_name='last name',
-    email='customer@gmail.com',
-    currency='MAD',
-    nationality='Moroccan'
-)
-
+resp = tap.Customer.create(**data)
 print('Success: %r' % (resp))
 
 
-# Updating customer
+######################
+# Customer Update
+######################
 data = {
   "first_name": "test",
   "last_name": "test",
@@ -29,21 +32,7 @@ data = {
   "nationality": "Amirican",
   "currency": "USD"
 }
+
 resp = tap.Customer.modify(resp.id, **data)
-
 print('Success: %r' % (resp))
-
-
-# Updating customer
-data = {
-  "first_name": "test",
-  "last_name": "test",
-  "email": "test@test.com",
-  "nationality": "Amirican",
-  "currency": "USD"
-}
-resp = tap.Customer.modify(resp.id, **data)
-
-print('Success: %r' % (resp))
-
 

@@ -3,7 +3,6 @@ from __future__ import absolute_import, division, print_function
 from tap.api_resources.abstract.createable_api_resource import CreateableAPIResource
 from tap.api_resources.abstract.updateable_api_resource import UpdateableAPIResource
 from tap.api_resources.abstract.deleteable_api_resource import DeleteableAPIResource
-from tap.api_resources.abstract.listeable_api_resource import ListeableAPIResource
 
 import tap
 
@@ -12,8 +11,9 @@ import tap
     'card',
     operations=['create', 'retrieve', 'update', 'delete', 'list']
 )
-class Customer(ListeableAPIResource, CreateableAPIResource,
-               UpdateableAPIResource, DeleteableAPIResource):
+class Customer(CreateableAPIResource,
+               UpdateableAPIResource,
+               DeleteableAPIResource):
 
     OBJECT_NAME = 'customer'
 

@@ -1,6 +1,7 @@
 from __future__ import absolute_import, division, print_function
 
-from tap import api_requestor, util
+# from tap import api_requestor, util
+import tap
 try:
     from urllib import quote_plus  # Python 2.X
 except ImportError:
@@ -24,16 +25,16 @@ def nested_resource_class_methods(resource, path=None, operations=None):
         setattr(cls, resource_url_method, classmethod(nested_resource_url))
 
         def nested_resource_request(cls, method, url, api_key=None,
-                                    idempotency_key=None, stripe_version=None,
-                                    stripe_account=None, **params):
-            requestor = api_requestor.APIRequestor(api_key,
-                                                   api_version=stripe_version,
-                                                   account=stripe_account)
-            headers = util.populate_headers(idempotency_key)
+                                    idempotency_key=None, tap_version=None,
+                                    tap_account=None, **params):
+            requestor = tap.api_requestor.APIRequestor(api_key,
+                                                   api_version=tap_version,
+                                                   account=tap_account)
+            headers = tap.util.populate_headers(idempotency_key)
             response, api_key = requestor.request(method, url, params, headers)
-            return util.convert_to_stripe_object(response, api_key,
-                                                 stripe_version,
-                                                 stripe_account)
+            return tap.util.convert_to_tap_object(response, api_key,
+                                                 tap_version,
+                                                 tap_account)
         resource_request_method = "%ss_request" % resource
         setattr(cls, resource_request_method,
                 classmethod(nested_resource_request))

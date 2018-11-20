@@ -13,6 +13,7 @@ log = None
 
 
 from api_resources.customer import Customer
+from api_resources.token import Token
 
 
 from tap.api_resources import *  # noqa
