@@ -18,3 +18,25 @@ def create_customer():
         customer = tap.Customer.create(**data)
         return customer
     return fun
+
+
+@pytest.fixture
+@tap_vcr.use_cassette('success_calls.yaml')
+def create_token():
+
+    def fun():
+        data = {
+            "card": {
+                "number": 5123450000000008,
+                "exp_month": 12,
+                "exp_year": 21,
+                "cvc": 124,
+            }
+        }
+
+        token = tap.Token.create(**data)
+        return token
+    return fun
+
+
+

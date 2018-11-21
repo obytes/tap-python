@@ -114,4 +114,49 @@ interactions:
       etag: [W/"1507-c0IKGUZ7tjIgCaBl8tdc+RGRxaM"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'card[number]=5123450000000008&card[exp_year]=21&card[cvc]=124&card[exp_month]=12'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['80']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [0caa5ce2-89ce-4a22-b577-67259a2ecffe]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/tokens
+  response:
+    body: {string: !!python/unicode '{"id":"tok_j4qu6QWKO8UVmNaosIZ1fJvy","object":"token","card":{"id":"card_wnR2qYTQJ7fMCujxVZU6aO3m","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542768511,"live_mode":false,"type":"CARD","used":false}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['393']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:48:31 GMT']
+      etag: [W/"189-ftlwyYblWYv7udEWa8AtQsOEsjI"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [ee44905a-429d-4ff0-9f17-480d95181c91]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/tokens/tok_j4qu6QWKO8UVmNaosIZ1fJvy
+  response:
+    body: {string: !!python/unicode '{"id":"tok_j4qu6QWKO8UVmNaosIZ1fJvy","object":"token","card":{"id":"card_wnR2qYTQJ7fMCujxVZU6aO3m","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542768511,"live_mode":false,"type":"CARD","used":false}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['393']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:57:40 GMT']
+      etag: [W/"189-ftlwyYblWYv7udEWa8AtQsOEsjI"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
 version: 1
