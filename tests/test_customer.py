@@ -52,3 +52,8 @@ class TestCustomer(object):
         resp = _customer.delete(**{'id': _customer.id})
         assert resp.id == _customer.id
         assert resp.deleted
+
+    @tap_vcr.use_cassette('success_calls.yaml')
+    def test_list_customers(self):
+        resp = tap.Customer.list()
+        assert len(resp.customers) > 0
