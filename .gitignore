@@ -24,3 +24,4 @@ tmp/
 coverage.*
 dist/*
 tap.egg-info/*
+tests/__pycache__/*
