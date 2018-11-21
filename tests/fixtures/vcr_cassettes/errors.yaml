@@ -1,0 +1,25 @@
+interactions:
+- request:
+    body: !!python/unicode '{"source": "tok_xxx"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['21']
+      Content-Type: [application/json]
+      User-Agent: [python-requests/2.14.0]
+    method: POST
+    uri: https://api.tap.company/v1/card/xxx
+  response:
+    body: {string: !!python/unicode '{"status":"fail","type":"customer_missing","message":"Invalid
+        customer id"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['75']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 02 May 2018 11:37:17 GMT']
+      etag: [W/"4b-vEI6/ECc3wVDEkQzl08wf8zS3C4"]
+      x-powered-by: [Express]
+    status: {code: 404, message: Not Found}
+version: 1

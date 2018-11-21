@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [9cccf38c-45e2-4be1-8fb0-0e84e9d41214]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/customers
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['203']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:08:29 GMT']
+      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [b924f083-e7ad-46f2-92d2-f09ae8ca3adb]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['203']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:16:17 GMT']
+      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=new+value&last_name=new+value&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['96']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [6bf2b588-5382-43d6-83e4-dcd54b726532]
+      User-Agent: [python-requests/2.20.1]
+    method: PUT
+    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"new
+        value","last_name":"new value","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['213']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:27:00 GMT']
+      etag: [W/"d5-bgCqAQekRmZDOFsEUg/rOryAvXU"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [0d81e83f-46b5-4a8a-8258-42f1580c6f20]
+      User-Agent: [python-requests/2.20.1]
+    method: DELETE
+    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711?id=cus_Rj92201858r4N52153711
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","deleted":true}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['49']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:33:23 GMT']
+      etag: [W/"31-WCED3jb/M76neDtSqPNY62AOsWo"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+version: 1

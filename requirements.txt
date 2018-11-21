@@ -3,3 +3,5 @@ pytest >= 3.4
 pytest-mock >= 1.7
 pytest-xdist >= 1.22
 pytest-cov >= 2.5
+vcrpy==1.10.0
+Faker==0.7.3
