@@ -15,7 +15,7 @@ class ListeableAPIResource(APIResource):
 
         requestor = tap.api_requestor.APIRequestor(api_key, api_version=tap_version,
                                                account=tap_account)
-        url = cls.class_url()
+        url = '%s/list' % (cls.class_url())
         response, api_key = requestor.request('post', url, params)
         tap_object = tap.util.convert_to_tap_object(response, api_key, tap_version,
                                                    tap_account)

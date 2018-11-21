@@ -39,7 +39,7 @@ Success: <Customer customer id=cus_k9RY2018525q5LP1962511 at 0x7f2a495e5990> JSO
   "live_mode": false,
   "nationality": "Moroccan",
   "object": "customer",
-  "stripe_account": null,
-  "stripe_version": null
+  "tap_account": null,
+  "tap_version": null
 }
 ```

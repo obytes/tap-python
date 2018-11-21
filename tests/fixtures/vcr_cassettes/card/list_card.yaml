@@ -1,0 +1,116 @@
+interactions:
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [9cccf38c-45e2-4be1-8fb0-0e84e9d41214]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/testing
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['203']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:08:29 GMT']
+      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [3de9dbd6-e0f6-44be-974b-3a0efa94637e]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/customers
+  response:
+    body: {string: !!python/unicode '{"id":"cus_b9ZP20181420Ha452134511","object":"customer","live_mode":false,"created":"1542810004634","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['205']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:20:06 GMT']
+      etag: [W/"cd-0IY1wMN1RZaZPMYUWwe0Iqf6YEI"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'card[number]=5123450000000008&card[exp_year]=21&card[cvc]=100&card[exp_month]=5'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['79']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [1ffcd466-6b9b-453c-be4e-24b0a6dee68b]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/tokens
+  response:
+    body: {string: !!python/unicode '{"id":"tok_ma7STgyvGd0sQKHRqB3AXceb","object":"token","card":{"id":"card_zywr18Q7dMoFNqpRBfJlc4gZ","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"S2gIAzjmFcwL0rJdNP5xwR+a+","brand":"MASTERCARD","exp_month":5,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542799323,"live_mode":false,"type":"CARD","used":false}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['392']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:22:03 GMT']
+      etag: [W/"188-h7xTRCaph++ydSmocl+hNNimIoM"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'source=tok_ma7STgyvGd0sQKHRqB3AXceb'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['35']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [341c0bca-2d54-4974-a096-a8a70241cc86]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/card/cus_b9ZP20181420Ha452134511
+  response:
+    body: {string: !!python/unicode '{"id":"card_zywr18Q7dMoFNqpRBfJlc4gZ","object":"card","address":{},"customer":"cus_b9ZP20181420Ha452134511","funding":"CREDIT","fingerprint":"S2gIAzjmFcwL0rJdNP5xwR+a+","brand":"MASTERCARD","exp_month":5,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['272']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:22:08 GMT']
+      etag: [W/"110-shh2UiAe82EJq6MQnjT8pLNnzKk"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [de13c2b8-2d2a-4bd4-aa2b-87908b4e12a5]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/card/cus_b9ZP20181420Ha452134511
+  response:
+    body: {string: !!python/unicode '{"object":"list","has_more":false,"data":[{"id":"card_zywr18Q7dMoFNqpRBfJlc4gZ","object":"card","address":{},"customer":"cus_b9ZP20181420Ha452134511","funding":"CREDIT","fingerprint":"S2gIAzjmFcwL0rJdNP5xwR+a+","brand":"MASTERCARD","exp_month":5,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null}]}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['316']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:22:12 GMT']
+      etag: [W/"13c-rVdwuxYPwV2gfnHWENnBaIaM+Ug"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+version: 1

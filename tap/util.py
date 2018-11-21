@@ -81,9 +81,17 @@ OBJECT_CLASSES = {}
 
 def load_classes():
     from tap.api_resources.customer import Customer
+    from tap.api_resources.token import Token
+    from tap.api_resources.charge import Charge
+    from tap.api_resources.refund import Refund
+    from tap.api_resources.card import Card
 
     return {
-        Customer.OBJECT_NAME: Customer
+        Customer.OBJECT_NAME: Customer,
+        Token.OBJECT_NAME: Token,
+        Charge.OBJECT_NAME: Charge,
+        Refund.OBJECT_NAME: Refund,
+        Card.OBJECT_NAME: Card
     }
 
 

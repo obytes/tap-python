@@ -104,8 +104,8 @@ class TapObject(dict):
                        tap_account=None):
 
         instance = cls(values.get('id'), api_key=api_key,
-                       stripe_version=tap_version,
-                       stripe_account=tap_account)
+                       tap_version=tap_version,
+                       tap_account=tap_account)
         instance.refresh_from(values, api_key=api_key,
                               tap_version=tap_version,
                               tap_account=tap_account)
@@ -117,10 +117,10 @@ class TapObject(dict):
         self.api_key = \
             api_key or getattr(values, 'api_key', None)
 
-        self.stripe_version = \
+        self.tap_version = \
             tap_version or getattr(values, 'tap_version', None)
 
-        self.stripe_account = \
+        self.tap_account = \
             tap_account or getattr(values, 'tap_account', None)
 
         for k, v in six.iteritems(values):

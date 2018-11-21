@@ -1,6 +1,4 @@
 import os
-import sys
-from codecs import open
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -9,15 +7,12 @@ os.chdir(here)
 
 setup(
     name='tap',
-    description='Python bindings for the Stripe API',
+    description='Python bindings for the Tap API',
     long_description='',
     author='obytes',
-    author_email='support@tap.com',
-    url='https://github.com//obytes/tap-python',
-    license='MIT',
+    url='https://github.com/obytes/tap-python',
     keywords='tap api payments',
     packages=find_packages(exclude=['tests', 'tests.*']),
-    package_data={'tap': ['data/ca-certificates.crt']},
     zip_safe=False,
     install_requires=[
         'requests >= 2.20; python_version >= "3.0"',
