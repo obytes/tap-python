@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [9cccf38c-45e2-4be1-8fb0-0e84e9d41214]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/testing
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['203']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 02:08:29 GMT']
+      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'card[number]=4508750015741019&card[exp_year]=21&card[cvc]=100&card[exp_month]=5'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['79']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [0fe88374-bc51-484a-9c86-afbf79623290]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/tokens
+  response:
+    body: {string: !!python/unicode '{"id":"tok_jGOWvcJep5NAlft1VsTaoUXd","object":"token","card":{"id":"card_cZDgFC1YEVl9L2OBI5QeoJAG","object":"card","address":{},"customer":null,"funding":"DEBIT","fingerprint":"gc0XVauPaBMfm+dTaW/pDsyV6","brand":"VISA","exp_month":5,"exp_year":2021,"last_four":"1019","first_six":"450875","name":null},"client_ip":null,"created":1542799192,"live_mode":false,"type":"CARD","used":false}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['385']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:19:52 GMT']
+      etag: [W/"181-E0YN6vAdoaET0UAVcEoFqb1zotA"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [cb6da9ad-9556-41e4-b6ff-42412199ee1b]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/customers
+  response:
+    body: {string: !!python/unicode '{"id":"cus_Rp4420181419c5P92140311","object":"customer","live_mode":false,"created":"1542809993751","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['205']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:19:56 GMT']
+      etag: [W/"cd-1ZdJVNN5wQKu+WGkk/zdhRRH22M"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'source=tok_jGOWvcJep5NAlft1VsTaoUXd'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['35']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [d75a7ca0-6bdf-4e7b-a652-2b9b86bdc7a1]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/card/cus_Rp4420181419c5P92140311
+  response:
+    body: {string: !!python/unicode '{"id":"card_cZDgFC1YEVl9L2OBI5QeoJAG","object":"card","address":{},"customer":"cus_Rp4420181419c5P92140311","funding":"DEBIT","fingerprint":"gc0XVauPaBMfm+dTaW/pDsyV6","brand":"VISA","exp_month":5,"exp_year":2021,"last_four":"1019","first_six":"450875","name":null}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['265']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:20:00 GMT']
+      etag: [W/"109-ACo/nq8IbSnHqTmI3o6l0NYD4Fs"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+version: 1

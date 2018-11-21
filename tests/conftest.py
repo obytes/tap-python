@@ -1,10 +1,12 @@
 import pytest
 from . import tap_vcr
 import tap
+from faker import Faker
+
 
 @pytest.fixture
 def customer_id():
-    return 'cus_a9RF20181234r4DR2199711'
+    return 'cus_Qj9420181257Mq942148611'
 
 
 @pytest.fixture
@@ -35,13 +37,13 @@ def refund_id():
 @tap_vcr.use_cassette('success_calls.yaml')
 def create_token():
 
-    def fun():
+    def fun(card_number, cvc):
         data = {
             "card": {
-                "number": 5123450000000008,
-                "exp_month": 12,
+                "number": card_number,
+                "exp_month": 05,
                 "exp_year": 21,
-                "cvc": 124,
+                "cvc": cvc,
             }
         }
 
@@ -49,3 +51,39 @@ def create_token():
         return token
     return fun
 
+
+@pytest.fixture
+@tap_vcr.use_cassette('success_calls.yaml')
+def create_customer(faker):
+
+    def fun():
+        data = {
+            "first_name": 'test',
+            "last_name": 'test',
+            "email": 'test@test.com',
+            "nationality": "Moroccan",
+            "currency": "MAD"
+        }
+
+        customer = tap.Customer.create(**data)
+        return customer
+    return fun
+
+
+@pytest.fixture
+@tap_vcr.use_cassette('success_calls.yaml')
+def create_card(create_token):
+
+    def fun(customer_id):
+        token = create_token('5123450000000008', '100')
+
+        card = tap.Customer.create_card(customer_id, **{'source': token.id})
+        return card
+    return fun
+
+
+@pytest.fixture()
+def faker():
+    f = Faker()
+    f.seed(500)
+    return f
