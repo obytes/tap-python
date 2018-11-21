@@ -4,8 +4,8 @@ import tap
 from tap.api_resources.customer import Customer
 
 
-@tap_vcr.use_cassette('success_calls.yaml')
-def test_create_customer(self):
+@tap_vcr.use_cassette('customer/success_calls.yaml')
+def test_create_customer():
     data = {
         "first_name": "test",
         "last_name": "test",
@@ -20,16 +20,16 @@ def test_create_customer(self):
     assert customer.nationality == data['nationality']
 
 
-@tap_vcr.use_cassette('success_calls.yaml')
-def test_get_customer(self, create_customer):
+@tap_vcr.use_cassette('customer/success_calls.yaml')
+def test_get_customer(create_customer):
     customer = create_customer()
     customer = tap.Customer.retrieve(customer.id)
     assert isinstance(customer, Customer)
     assert customer.id == customer.id
 
 
-@tap_vcr.use_cassette('success_calls.yaml')
-def test_update_customer(self, create_customer):
+@tap_vcr.use_cassette('customer/success_calls.yaml')
+def test_update_customer(create_customer):
     customer = create_customer()
 
     data = {
@@ -47,8 +47,8 @@ def test_update_customer(self, create_customer):
     assert customer.nationality == data['nationality']
 
 
-@tap_vcr.use_cassette('success_calls.yaml')
-def test_delete_customer(self, create_customer):
+@tap_vcr.use_cassette('customer/success_calls.yaml')
+def test_delete_customer(create_customer):
     customer = create_customer()
 
     data = {
@@ -61,7 +61,7 @@ def test_delete_customer(self, create_customer):
     assert resp.deleted
 
 
-@tap_vcr.use_cassette('success_calls.yaml')
-def test_list_customers(self):
+@tap_vcr.use_cassette('customer/success_calls.yaml')
+def test_list_customers():
     resp = tap.Customer.list()
     assert len(resp.customers) > 0
