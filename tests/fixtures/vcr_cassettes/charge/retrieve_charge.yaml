@@ -1,0 +1,94 @@
+interactions:
+- request:
+    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['86']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [c57fbddf-a396-418c-8502-fe4940abc76e]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/customers
+  response:
+    body: {string: !!python/unicode '{"id":"cus_g9JQ20181426Pp9r212211","object":"customer","live_mode":false,"created":"1542810408214","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['204']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 11:26:50 GMT']
+      etag: [W/"cc-uSx6TIXO38DfVcMtWxH/1mSTn1s"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: !!python/unicode 'customer[id]=cus_g9JQ20181426Pp9r212211&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['191']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [ea150968-fe95-4c2e-b4c4-25abdd97f764]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/charges
+  response:
+    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_Qk9220181449Zs9a2133511\"\
+        ,\r\n  \"object\": \"charge\",\r\n  \"live_mode\": false,\r\n  \"api_version\"\
+        : \"V2\",\r\n  \"status\": \"INITIATED\",\r\n  \"amount\": 10.000,\r\n  \"\
+        currency\": \"KWD\",\r\n  \"threeDSecure\": true,\r\n  \"save_card\": false,\r\
+        \n  \"transaction\": {\r\n    \"timezone\": \"UTC+03:00\",\r\n    \"created\"\
+        : \"1542811771848\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=76Z%2bbGAoAEb653XcJjyx214m8gTr14uZZVqx%2bbThoMc%3d&sess=EjdpQDf05gQ%3d&token=76Z%2bbGAoAEb653XcJjyx214m8gTr14uZcPnP0FroRg0%3d\"\
+        \r\n  },\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n    \"message\"\
+        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_g9JQ20181426Pp9r212211\"\
+        \r\n  },\r\n  \"source\": {\r\n    \"object\": \"source\",\r\n    \"id\":\
+        \ \"src_all\"\r\n  },\r\n  \"redirect\": {\r\n    \"status\": \"PENDING\"\
+        ,\r\n    \"url\": \"http://your_website.com/redirect_url\"\r\n  },\r\n  \"\
+        post\": {\r\n    \"status\": \"PENDING\",\r\n    \"url\": \"http://your_website.com/post_url\"\
+        \r\n  }\r\n}"}
+    headers:
+      connection: [keep-alive]
+      content-length: ['934']
+      content-type: [application/json]
+      date: ['Wed, 21 Nov 2018 11:49:34 GMT']
+      etag: [W/"3a6-V4iqcc/pi7KpWjT5y5V7b+4TsGw"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [6cf565b3-94c8-4128-8c26-e9cbf7da1a76]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/charges/chg_Qk9220181449Zs9a2133511
+  response:
+    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_Qk9220181449Zs9a2133511\"\
+        ,\r\n  \"object\": \"charge\",\r\n  \"live_mode\": false,\r\n  \"api_version\"\
+        : \"V2\",\r\n  \"status\": \"INITIATED\",\r\n  \"amount\": 10.0,\r\n  \"currency\"\
+        : \"KWD\",\r\n  \"threeDSecure\": true,\r\n  \"save_card\": false,\r\n  \"\
+        transaction\": {\r\n    \"timezone\": \"UTC+03:00\",\r\n    \"created\": \"\
+        1542811771848\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=76Z%2bbGAoAEb653XcJjyx214m8gTr14uZZVqx%2bbThoMc%3d&sess=EjdpQDf05gQ%3d&token=76Z%2bbGAoAEb653XcJjyx214m8gTr14uZcPnP0FroRg0%3d\"\
+        \r\n  },\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n    \"message\"\
+        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_g9JQ20181426Pp9r212211\"\
+        \r\n  },\r\n  \"source\": {\r\n    \"object\": \"source\",\r\n    \"id\":\
+        \ \"src_all\"\r\n  },\r\n  \"redirect\": {\r\n    \"status\": \"PENDING\"\
+        ,\r\n    \"url\": \"http://your_website.com/redirect_url\"\r\n  },\r\n  \"\
+        post\": {\r\n    \"status\": \"PENDING\",\r\n    \"url\": \"http://your_website.com/post_url\"\
+        \r\n  }\r\n}"}
+    headers:
+      connection: [keep-alive]
+      content-length: ['932']
+      content-type: [application/json]
+      date: ['Wed, 21 Nov 2018 11:49:37 GMT']
+      etag: [W/"3a4-tLT4InN6s64g9Pd/kQyPgJPUo/g"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+version: 1

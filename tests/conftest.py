@@ -1,7 +1,6 @@
 import pytest
 from . import tap_vcr
 import tap
-from faker import Faker
 
 
 @pytest.fixture
@@ -54,7 +53,7 @@ def create_token():
 
 @pytest.fixture
 @tap_vcr.use_cassette('success_calls.yaml')
-def create_customer(faker):
+def create_customer():
 
     def fun():
         data = {
@@ -82,8 +81,29 @@ def create_card(create_token):
     return fun
 
 
-@pytest.fixture()
-def faker():
-    f = Faker()
-    f.seed(500)
-    return f
+@pytest.fixture
+@tap_vcr.use_cassette('success_calls.yaml')
+def create_charge():
+
+    def fun(customer_id):
+        data = {
+            "amount": 10,
+            "currency": "KWD",
+            "customer": {
+                "id": customer_id
+            },
+            "source": {
+                "id": "src_all"
+            },
+            "post": {
+                "url": "http://your_website.com/post_url"
+            },
+            "redirect": {
+                "url": "http://your_website.com/redirect_url"
+            }
+        }
+
+        charge = tap.Charge.create(**data)
+        return charge
+    return fun
+
