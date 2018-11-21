@@ -22,15 +22,13 @@ class TestCustomer(object):
         assert customer.nationality == data['nationality']
 
     @tap_vcr.use_cassette('success_calls.yaml')
-    def test_get_customer(self, create_customer):
-        _customer = create_customer()
-        customer = tap.Customer.retrieve(_customer.id)
+    def test_get_customer(self, customer_id):
+        customer = tap.Customer.retrieve(customer_id)
         assert isinstance(customer, Customer)
-        assert customer.email == _customer.email
+        assert customer.id == customer_id
 
     @tap_vcr.use_cassette('success_calls.yaml')
-    def test_update_customer(self, create_customer):
-        _customer = create_customer()
+    def test_update_customer(self, customer_id):
         data = {
             "first_name": "new value",
             "last_name": "new value",
@@ -39,18 +37,21 @@ class TestCustomer(object):
             "currency": "MAD"
         }
 
-        customer = tap.Customer.modify(_customer.id, **data)
+        customer = tap.Customer.modify(customer_id, **data)
         assert isinstance(customer, Customer)
         assert customer.email == data['email']
         assert customer.first_name == data['first_name']
         assert customer.nationality == data['nationality']
 
     @tap_vcr.use_cassette('success_calls.yaml')
-    def test_delete_customer(self, create_customer):
-        _customer = create_customer()
+    def test_delete_customer(self, customer_id):
+        data = {
+            "id": customer_id
+        }
 
-        resp = _customer.delete(**{'id': _customer.id})
-        assert resp.id == _customer.id
+        customer = tap.Customer.modify(customer_id, **data)
+        resp = customer.delete(**{'id': customer_id})
+        assert resp.id == customer.id
         assert resp.deleted
 
     @tap_vcr.use_cassette('success_calls.yaml')

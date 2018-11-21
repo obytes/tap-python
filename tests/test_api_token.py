@@ -4,10 +4,10 @@ import tap
 from tap.api_resources.token import Token
 
 
-class TestCustomer(object):
+class TestToken(object):
 
     @tap_vcr.use_cassette('success_calls.yaml')
-    def test_create_customer(self):
+    def test_create_token(self):
         data = {
             "card": {
                 "number": 5123450000000008,
@@ -24,7 +24,8 @@ class TestCustomer(object):
 
     @tap_vcr.use_cassette('success_calls.yaml')
     def test_get_token(self, create_token):
-        _token = create_token()
-        token = tap.Token.retrieve(_token.id)
+        token = create_token()
+
+        token = tap.Token.retrieve(token.id)
         assert isinstance(token, Token)
-        assert token.id == _token.id
+        assert token.id == token.id

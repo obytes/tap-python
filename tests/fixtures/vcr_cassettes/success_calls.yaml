@@ -23,6 +23,31 @@ interactions:
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
+    body: !!python/unicode 'source=tok_baUJjDYkyxnszgXEwuthQCqP'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['35']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [b1ee697f-2bc2-4a67-a881-0e72fd3677da]
+      User-Agent: [python-requests/2.20.1]
+    method: POST
+    uri: https://api.tap.company/v2/card/cus_a9RF20181234r4DR2199711
+  response:
+    body: {string: !!python/unicode '{"id":"card_gDyaVQqHxTv7cwGJ43UXezSY","object":"card","address":{"city":"Kuwait
+        city","country":"Kuwait","line1":"Salmiya, 21","avenue":"Gulf","street":"Salim"},"customer":"cus_a9RF20181234r4DR2199711","funding":"DEBIT","fingerprint":"Mo79HVDearBmi3H98qjKSwEvv","brand":"VISA","exp_month":12,"exp_year":2021,"last_four":"1019","first_six":"450875","name":"test
+        token"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['368']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 09:36:10 GMT']
+      etag: [W/"170-582NBeyfW03HBB4BbOVSWPy/RT8"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
     body: null
     headers:
       Accept: ['*/*']
@@ -30,18 +55,91 @@ interactions:
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [b924f083-e7ad-46f2-92d2-f09ae8ca3adb]
+      Idempotency-Key: [88eac62e-807f-4a65-9204-0c1ea203f6d4]
       User-Agent: [python-requests/2.20.1]
     method: GET
-    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711
+    uri: https://api.tap.company/v2/card/cus_a9RF20181234r4DR2199711/card_JEHx97l5kD0i4dgMUoFrvmTZ
   response:
-    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    body: {string: !!python/unicode '{"id":"card_JEHx97l5kD0i4dgMUoFrvmTZ","object":"card","address":{"city":"Kuwait
+        city","country":"Kuwait","line1":"Salmiya, 21","avenue":"Gulf","street":"Salim"},"customer":"cus_a9RF20181234r4DR2199711","funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":"test
+        token"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['203']
+      content-length: ['375']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:16:17 GMT']
-      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
+      date: ['Wed, 21 Nov 2018 09:36:14 GMT']
+      etag: [W/"177-XnRasd21brWaOxBRnGh+jhnks/U"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [46492e8b-decc-4a56-adf2-3756cdcfe0af]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/card/cus_a9RF20181234r4DR2199711
+  response:
+    body: {string: !!python/unicode '{"object":"list","has_more":false,"data":[{"id":"card_gDyaVQqHxTv7cwGJ43UXezSY","object":"card","address":{"city":"Kuwait
+        city","country":"Kuwait","line1":"Salmiya, 21","avenue":"Gulf","street":"Salim"},"customer":"cus_a9RF20181234r4DR2199711","funding":"DEBIT","fingerprint":"Mo79HVDearBmi3H98qjKSwEvv","brand":"VISA","exp_month":12,"exp_year":2021,"last_four":"1019","first_six":"450875","name":"test
+        token"},{"id":"card_JEHx97l5kD0i4dgMUoFrvmTZ","object":"card","address":{"city":"Kuwait
+        city","country":"Kuwait","line1":"Salmiya, 21","avenue":"Gulf","street":"Salim"},"customer":"cus_a9RF20181234r4DR2199711","funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":"test
+        token"}]}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['788']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 09:36:19 GMT']
+      etag: [W/"314-ditlODLQkCY5lt6VJmGljsi2sY4"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [0495e84e-780b-4107-a49f-9dec59a75f18]
+      User-Agent: [python-requests/2.20.1]
+    method: DELETE
+    uri: https://api.tap.company/v2/card/cus_a9RF20181234r4DR2199711/card_JEHx97l5kD0i4dgMUoFrvmTZ
+  response:
+    body: {string: !!python/unicode '{"deleted":true,"id":"card_JEHx97l5kD0i4dgMUoFrvmTZ"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['53']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 09:36:24 GMT']
+      etag: [W/"35-9brGnKlq+ZLwGO/8NVsPwjmOPn0"]
+      x-powered-by: [Express]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [1f93e3ff-47db-4c81-9ac0-ee74acccd04f]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/customers/cus_a9RF20181234r4DR2199711
+  response:
+    body: {string: !!python/unicode '{"id":"cus_a9RF20181234r4DR2199711","object":"customer","live_mode":false,"created":"1542803672202","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['205']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 09:36:27 GMT']
+      etag: [W/"cd-K6VI6BHQTZG0d8hZSrpqYqkFRAY"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -53,19 +151,19 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['96']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [6bf2b588-5382-43d6-83e4-dcd54b726532]
+      Idempotency-Key: [a9825db7-4763-4981-bf1b-4ca0c3894258]
       User-Agent: [python-requests/2.20.1]
     method: PUT
-    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711
+    uri: https://api.tap.company/v2/customers/cus_a9RF20181234r4DR2199711
   response:
-    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"new
+    body: {string: !!python/unicode '{"id":"cus_a9RF20181234r4DR2199711","object":"customer","live_mode":false,"created":"1542803672202","currency":"MAD","nationality":"Moroccan","first_name":"new
         value","last_name":"new value","email":"test@test.com"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['213']
+      content-length: ['215']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:27:00 GMT']
-      etag: [W/"d5-bgCqAQekRmZDOFsEUg/rOryAvXU"]
+      date: ['Wed, 21 Nov 2018 09:36:30 GMT']
+      etag: [W/"d7-kk1fxET90z962RD57qpAhGifMWQ"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -77,18 +175,18 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['0']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [0d81e83f-46b5-4a8a-8258-42f1580c6f20]
+      Idempotency-Key: [3b8ac54a-312f-469a-bd39-424362823048]
       User-Agent: [python-requests/2.20.1]
     method: DELETE
-    uri: https://api.tap.company/v2/customers/cus_Rj92201858r4N52153711?id=cus_Rj92201858r4N52153711
+    uri: https://api.tap.company/v2/customers/cus_a9RF20181234r4DR2199711?id=cus_a9RF20181234r4DR2199711
   response:
-    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","deleted":true}'}
+    body: {string: !!python/unicode '{"id":"cus_a9RF20181234r4DR2199711","deleted":true}'}
     headers:
       connection: [keep-alive]
-      content-length: ['49']
+      content-length: ['51']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:33:23 GMT']
-      etag: [W/"31-WCED3jb/M76neDtSqPNY62AOsWo"]
+      date: ['Wed, 21 Nov 2018 09:36:33 GMT']
+      etag: [W/"33-96UHKriQ5VBDOzPuII6hOch30d8"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -100,18 +198,18 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['0']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [985e1408-851a-41da-be24-aad252956b07]
+      Idempotency-Key: [aaa04a9e-d322-4b47-8ab2-da5f7ed7bf0c]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/customers/list
   response:
-    body: {string: !!python/unicode '{"object":"list","live_mode":false,"api_version":"V2","count":25,"has_more":true,"customers":[{"id":"cus_Bc9p2018536Hj4w2164711","object":"customer","live_mode":false,"created":"1542778593880","first_name":"Jad","last_name":"Windows","email":"jad+windows@rain.bh","phone":{"country_code":"1","number":"9376542800"}},{"id":"cus_Rq4o2018534Bb9r2140511","object":"customer","live_mode":false,"created":"1542778464598","first_name":"Jad","last_name":"Windows","email":"jad+windows@rain.bh","phone":{"country_code":"1","number":"9376542800"}},{"id":"cus_Lc4q2018525k9T5212111","object":"customer","live_mode":false,"created":"1542777933327","first_name":"Jad","last_name":"Windows","email":"jad+windows@rain.bh","phone":{"country_code":"1","number":"9376542800"}},{"id":"cus_Jt9j2018518Bx2t2167211","object":"customer","live_mode":false,"created":"1542777524865","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_Ma592018517Mq49211111","object":"customer","live_mode":false,"created":"1542777466285","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_e9T42018517Oy9m2164211","object":"customer","live_mode":false,"created":"1542777456914","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_Re5l2018517h5Q22130011","object":"customer","live_mode":false,"created":"1542777439491","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_x9OT2018517Hc592117911","object":"customer","live_mode":false,"created":"1542777424377","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_Qa452018514Xt4b2154311","object":"customer","live_mode":false,"created":"1542777251738","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_y9P52018513Hp9m2195411","object":"customer","live_mode":false,"created":"1542777236143","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_x4HR2018513Oj9o2173911","object":"customer","live_mode":false,"created":"1542777220940","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_Yy5g201843Zb9c2111511","object":"customer","live_mode":false,"created":"1542772994350","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_x4HX201842m2BH2198311","object":"customer","live_mode":false,"created":"1542772964269","currency":"USD","nationality":"Amirican","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Bo4t2018340Ka952147111","object":"customer","live_mode":false,"created":"1542771617698","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_e9TO2018340i9R42140011","object":"customer","live_mode":false,"created":"1542771602599","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_o2KP2018339Dn9u2137411","object":"customer","live_mode":false,"created":"1542771590582","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_Jb292018339w9ON2158811","object":"customer","live_mode":false,"created":"1542771581822","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_e4Q22018338Os4n2153011","object":"customer","live_mode":false,"created":"1542771519726","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_w9BJ2018332Tu442132011","object":"customer","live_mode":false,"created":"1542771145560","currency":"USD","nationality":"Amirican","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Rc952018332w9YK217611","object":"customer","live_mode":false,"created":"1542771125306","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_o2OP2018331o9K52160711","object":"customer","live_mode":false,"created":"1542771074933","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_r2DP2018330Om942170411","object":"customer","live_mode":false,"created":"1542771047961","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_q2K52018330c4XM2174411","object":"customer","live_mode":false,"created":"1542771033071","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_c9Q52018317Km922180011","object":"customer","live_mode":false,"created":"1542770264209","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_m5ZQ2018055Ly9j2129611","object":"customer","live_mode":false,"created":"1542761719504","first_name":"Travis","last_name":"Morgan","email":"travis@rain.bh","phone":{"country_code":"1","number":"7024613097"}}]}'}
+    body: {string: !!python/unicode '{"object":"list","live_mode":false,"api_version":"V2","count":25,"has_more":true,"customers":[{"id":"cus_Ob4420181227l5F22143811","object":"customer","live_mode":false,"created":"1542803277684","first_name":"Nandani","middle_name":"","last_name":"Choudhary","email":"nandanik@tiinfotech.com","phone":{"country_code":"+965","number":"7894561231"}},{"id":"cus_o4X920181214h9MH2173311","object":"customer","live_mode":false,"created":"1542802450931","first_name":"First","middle_name":"","last_name":"Name","email":"email@email.com","phone":{"country_code":"965","number":"333333333"}},{"id":"cus_Yk9420181212Zo2t2136811","object":"customer","live_mode":false,"created":"1542802332568","first_name":"First","middle_name":"","last_name":"Name","email":"email@email.com","phone":{"country_code":"965","number":"333333333"}},{"id":"cus_Hj452018118g5Y92127811","object":"customer","live_mode":false,"created":"1542798503482","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Lx9p20181011Le2x2152511","object":"customer","live_mode":false,"created":"1542795082754","first_name":"First","middle_name":"","last_name":"Name","email":"email@email.com","phone":{"country_code":"965","number":"333333333"}},{"id":"cus_Kr9y201897g4JR2180011","object":"customer","live_mode":false,"created":"1542791251989","first_name":"asd","middle_name":"","last_name":"asd","email":"ind@gmail.com","phone":{"country_code":"197","number":"500000"}},{"id":"cus_Ze2g2018827r9H52144911","object":"customer","live_mode":false,"created":"1542788863709","description":"test","metadata":{"udf1":"test"},"currency":"KWD","first_name":"test","middle_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"00000000"}},{"id":"cus_Th9b2018716Fy4n2134511","object":"customer","live_mode":false,"created":"1542784577548","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Oy942018634n2FM2187511","object":"customer","live_mode":false,"created":"1542782081101","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_u5X92018621Zy242117111","object":"customer","live_mode":false,"created":"1542781307466","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Qt952018553Zk2t2136811","object":"customer","live_mode":false,"created":"1542779616670","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_p4NR2018553g2HD2117411","object":"customer","live_mode":false,"created":"1542779601375","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_m9XR2018553Fm4c2138411","object":"customer","live_mode":false,"created":"1542779589592","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_Na9o2018553Pq422186011","object":"customer","live_mode":false,"created":"1542779581087","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_Mh4y2018551Mj9o2126611","object":"customer","live_mode":false,"created":"1542779517472","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_Jt9j2018518Bx2t2167211","object":"customer","live_mode":false,"created":"1542777524865","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_Ma592018517Mq49211111","object":"customer","live_mode":false,"created":"1542777466285","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_Re5l2018517h5Q22130011","object":"customer","live_mode":false,"created":"1542777439491","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_x9OT2018517Hc592117911","object":"customer","live_mode":false,"created":"1542777424377","first_name":"Foo","last_name":"Bar","email":"foo@bar.com","phone":{"country_code":"1","number":"541-754-3010"}},{"id":"cus_x4HR2018513Oj9o2173911","object":"customer","live_mode":false,"created":"1542777220940","first_name":"first","last_name":"last","email":"test@test.com","phone":{"country_code":"0","number":""}},{"id":"cus_Yy5g201843Zb9c2111511","object":"customer","live_mode":false,"created":"1542772994350","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_x4HX201842m2BH2198311","object":"customer","live_mode":false,"created":"1542772964269","currency":"USD","nationality":"Amirican","first_name":"test","last_name":"test","email":"test@test.com"},{"id":"cus_Bo4t2018340Ka952147111","object":"customer","live_mode":false,"created":"1542771617698","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_e9TO2018340i9R42140011","object":"customer","live_mode":false,"created":"1542771602599","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}},{"id":"cus_o2KP2018339Dn9u2137411","object":"customer","live_mode":false,"created":"1542771590582","first_name":"test","last_name":"test","email":"test@test.com","phone":{"country_code":"965","number":"000000000"}}]}'}
     headers:
       connection: [keep-alive]
-      content-length: ['5383']
+      content-length: ['5572']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:36:58 GMT']
-      etag: [W/"1507-c0IKGUZ7tjIgCaBl8tdc+RGRxaM"]
+      date: ['Wed, 21 Nov 2018 09:36:36 GMT']
+      etag: [W/"15c4-/4RktGEQDUJm2aIJ1/y3czWu9uo"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -123,18 +221,18 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['80']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [0caa5ce2-89ce-4a22-b577-67259a2ecffe]
+      Idempotency-Key: [a1632d89-72e2-491c-8c81-15d18a410603]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/tokens
   response:
-    body: {string: !!python/unicode '{"id":"tok_j4qu6QWKO8UVmNaosIZ1fJvy","object":"token","card":{"id":"card_wnR2qYTQJ7fMCujxVZU6aO3m","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542768511,"live_mode":false,"type":"CARD","used":false}'}
+    body: {string: !!python/unicode '{"id":"tok_oPwr5j1MHUps9tmKBqFdXzR8","object":"token","card":{"id":"card_gRVe4miKyG8qXhrWzxsjZkb9","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542793000,"live_mode":false,"type":"CARD","used":false}'}
     headers:
       connection: [keep-alive]
       content-length: ['393']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:48:31 GMT']
-      etag: [W/"189-ftlwyYblWYv7udEWa8AtQsOEsjI"]
+      date: ['Wed, 21 Nov 2018 09:36:40 GMT']
+      etag: [W/"189-DgU0CWgLyTVTocpJK9BQBMsyBuQ"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -145,18 +243,41 @@ interactions:
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [ee44905a-429d-4ff0-9f17-480d95181c91]
+      Idempotency-Key: [54954778-3d79-4385-9055-e3ff0399b9da]
       User-Agent: [python-requests/2.20.1]
     method: GET
-    uri: https://api.tap.company/v2/tokens/tok_j4qu6QWKO8UVmNaosIZ1fJvy
+    uri: https://api.tap.company/v2/tokens/tok_ryzTND5kYZtcKdslWXBujCOF
   response:
-    body: {string: !!python/unicode '{"id":"tok_j4qu6QWKO8UVmNaosIZ1fJvy","object":"token","card":{"id":"card_wnR2qYTQJ7fMCujxVZU6aO3m","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542768511,"live_mode":false,"type":"CARD","used":false}'}
+    body: {string: !!python/unicode '{"status":"fail","type":"record_not_found","message":"Couldn''t
+        find Token"}'}
+    headers:
+      connection: [keep-alive]
+      content-length: ['75']
+      content-type: [application/json; charset=utf-8]
+      date: ['Wed, 21 Nov 2018 09:36:42 GMT']
+      etag: [W/"4b-Ux+w2BzSW53sChwTPRoPHsVTTUY"]
+      x-powered-by: [Express]
+    status: {code: 404, message: Not Found}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
+      Connection: [keep-alive]
+      Content-Type: [application/x-www-form-urlencoded]
+      Idempotency-Key: [d40217c9-9745-4798-ae67-5221bb2db628]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: https://api.tap.company/v2/tokens/tok_oPwr5j1MHUps9tmKBqFdXzR8
+  response:
+    body: {string: !!python/unicode '{"id":"tok_oPwr5j1MHUps9tmKBqFdXzR8","object":"token","card":{"id":"card_gRVe4miKyG8qXhrWzxsjZkb9","object":"card","address":{},"customer":null,"funding":"CREDIT","fingerprint":"0F9/2hS66rMpSpJxVaehzbRqq","brand":"MASTERCARD","exp_month":12,"exp_year":2021,"last_four":"0008","first_six":"512345","name":null},"client_ip":null,"created":1542793000,"live_mode":false,"type":"CARD","used":false}'}
     headers:
       connection: [keep-alive]
       content-length: ['393']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:57:40 GMT']
-      etag: [W/"189-ftlwyYblWYv7udEWa8AtQsOEsjI"]
+      date: ['Wed, 21 Nov 2018 09:39:11 GMT']
+      etag: [W/"189-DgU0CWgLyTVTocpJK9BQBMsyBuQ"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 version: 1
