@@ -39,27 +39,18 @@ def test_retrieve_charge(create_charge, create_customer):
     assert charge.id == charge.id
 
 
-@pytest.mark.xfail(reason='Got this from Tap API: Sorry, we couldn\'t achieve your request at the moment. Please try again later, or contact our customer support.')
 @tap_vcr.use_cassette('charge/update_charge.yaml')
 def test_update_charge(create_charge, create_customer):
     customer = create_customer()
     charge = create_charge(customer.id)
 
     data = {
-      "description": "test",
-      "receipt": {
-        "email": False,
-        "sms": True
-      },
-      "metadata": {
-        "udf2": "test"
-      }
+        "description": "test"
     }
 
     resp = tap.Charge.modify(charge.id, **data)
     assert isinstance(resp, Charge)
-    assert resp.amount == data['amount']
-    assert resp.currency == data['currency']
+    assert resp.description == data['description']
 
 
 @pytest.mark.xfail(reason='Got this from Tap API: Charge not found')
@@ -67,5 +58,16 @@ def test_update_charge(create_charge, create_customer):
 def test_list_charge(create_charge, create_customer):
     customer = create_customer()
     charge = create_charge(customer.id)
+    data = {
+      "period": {
+        "date": {
+          "from": 1516315144000,
+          "to": 1545172744000
+        }
+      },
+      "status": "",
+      "starting_after": "",
+      "limit": 25
+    }
     resp = tap.Charge.list()
     assert len(resp.customers) > 0
