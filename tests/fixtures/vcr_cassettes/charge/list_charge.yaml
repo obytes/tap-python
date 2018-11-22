@@ -8,65 +8,42 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['86']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [c57fbddf-a396-418c-8502-fe4940abc76e]
-      User-Agent: [python-requests/2.20.1]
-    method: POST
-    uri: https://api.tap.company/v2/testing
-  response:
-    body: {string: !!python/unicode '{"id":"cus_g9JQ20181426Pp9r212211","object":"customer","live_mode":false,"created":"1542810408214","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
-    headers:
-      connection: [keep-alive]
-      content-length: ['204']
-      content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 11:26:50 GMT']
-      etag: [W/"cc-uSx6TIXO38DfVcMtWxH/1mSTn1s"]
-      x-powered-by: [Express]
-    status: {code: 200, message: OK}
-- request:
-    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
-      Connection: [keep-alive]
-      Content-Length: ['86']
-      Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [0618ef5a-03e0-44ba-9ded-5fa735592b0d]
+      Idempotency-Key: [7bde41e2-2902-4808-a940-b59ee9745d8b]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/customers
   response:
-    body: {string: !!python/unicode '{"id":"cus_Qg992018156Qi29212311","object":"customer","live_mode":false,"created":"1542812795247","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    body: {string: !!python/unicode '{"id":"cus_Mh5k2018525Lu922279611","object":"customer","live_mode":false,"created":"1542864359035","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['203']
+      content-length: ['204']
       content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 12:06:37 GMT']
-      etag: [W/"cb-ip6C8RpqqXgv3uSr+JtShsTJnqw"]
+      date: ['Thu, 22 Nov 2018 02:26:01 GMT']
+      etag: [W/"cc-SKIYlgMZbN29VQwPOmhIAMjip98"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode 'customer[id]=cus_Qg992018156Qi29212311&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
+    body: !!python/unicode 'customer[id]=cus_Mh5k2018525Lu922279611&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
-      Content-Length: ['190']
+      Content-Length: ['191']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [711b7038-5907-48fd-a3a7-3394fe68f67b]
+      Idempotency-Key: [8eadaed1-9492-4e98-8bed-3bff8cec11ef]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/charges
   response:
-    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_No252018156n9F42186311\"\
+    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_j2KN2018526Kj922281711\"\
         ,\r\n  \"object\": \"charge\",\r\n  \"live_mode\": false,\r\n  \"api_version\"\
         : \"V2\",\r\n  \"status\": \"INITIATED\",\r\n  \"amount\": 10.000,\r\n  \"\
         currency\": \"KWD\",\r\n  \"threeDSecure\": true,\r\n  \"save_card\": false,\r\
         \n  \"transaction\": {\r\n    \"timezone\": \"UTC+03:00\",\r\n    \"created\"\
-        : \"1542812800058\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=0B1rYJYsrkCWdgHKyiPMuJvW0xXNKyWL0DWorcxtb6Y%3d&sess=BTefm3NHZJ8%3d&token=0B1rYJYsrkCWdgHKyiPMuJvW0xXNKyWLGaU4j%2bqFH6k%3d\"\
+        : \"1542864364032\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=Fm2n%2bgtUzNoX2uXYz%2fy55NcUkEEBj8YV0DWorcxtb6Y%3d&sess=G%2fIl4qQ2cn8%3d&token=Fm2n%2bgtUzNoX2uXYz%2fy55NcUkEEBj8YVW1xDOVlh01U%3d\"\
         \r\n  },\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n    \"message\"\
-        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_Qg992018156Qi29212311\"\
+        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_Mh5k2018525Lu922279611\"\
         \r\n  },\r\n  \"source\": {\r\n    \"object\": \"source\",\r\n    \"id\":\
         \ \"src_all\"\r\n  },\r\n  \"redirect\": {\r\n    \"status\": \"PENDING\"\
         ,\r\n    \"url\": \"http://your_website.com/redirect_url\"\r\n  },\r\n  \"\
@@ -74,10 +51,10 @@ interactions:
         \r\n  }\r\n}"}
     headers:
       connection: [keep-alive]
-      content-length: ['928']
+      content-length: ['937']
       content-type: [application/json]
-      date: ['Wed, 21 Nov 2018 12:06:42 GMT']
-      etag: [W/"3a0-Yvzf6gXpi3XsvBkXM9YLxXESccY"]
+      date: ['Thu, 22 Nov 2018 02:26:07 GMT']
+      etag: [W/"3a9-Wt4UuDLDGZyS1Gr3g8J6HIw8bjI"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
@@ -89,7 +66,7 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['0']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [b5a87bbc-d58d-49c3-b6d5-6895960e46fa]
+      Idempotency-Key: [00e90a85-5815-4461-a471-b955c7c33678]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/charges/list
@@ -101,7 +78,7 @@ interactions:
       connection: [keep-alive]
       content-length: ['102']
       content-type: [application/json]
-      date: ['Wed, 21 Nov 2018 12:06:45 GMT']
+      date: ['Thu, 22 Nov 2018 02:26:10 GMT']
       etag: [W/"66-zRWtOynn9uVrAwJ1k0QnIsGXy7A"]
       x-powered-by: [Express]
     status: {code: 400, message: Bad Request}
