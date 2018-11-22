@@ -8,29 +8,6 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['86']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [9cccf38c-45e2-4be1-8fb0-0e84e9d41214]
-      User-Agent: [python-requests/2.20.1]
-    method: POST
-    uri: https://api.tap.company/v2/testing
-  response:
-    body: {string: !!python/unicode '{"id":"cus_Rj92201858r4N52153711","object":"customer","live_mode":false,"created":"1542776907774","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
-    headers:
-      connection: [keep-alive]
-      content-length: ['203']
-      content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 02:08:29 GMT']
-      etag: [W/"cb-GJiA/P24MSPh+hbHYphyMnD30Rw"]
-      x-powered-by: [Express]
-    status: {code: 200, message: OK}
-- request:
-    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
-      Connection: [keep-alive]
-      Content-Length: ['86']
-      Content-Type: [application/x-www-form-urlencoded]
       Idempotency-Key: [836cef95-24fb-4534-b2da-79ef50f06dd6]
       User-Agent: [python-requests/2.20.1]
     method: POST
