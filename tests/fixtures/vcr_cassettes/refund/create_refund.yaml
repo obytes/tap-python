@@ -8,65 +8,42 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['86']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [c57fbddf-a396-418c-8502-fe4940abc76e]
-      User-Agent: [python-requests/2.20.1]
-    method: POST
-    uri: https://localhost/testing
-  response:
-    body: {string: !!python/unicode '{"id":"cus_g9JQ20181426Pp9r212211","object":"customer","live_mode":false,"created":"1542810408214","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
-    headers:
-      connection: [keep-alive]
-      content-length: ['204']
-      content-type: [application/json; charset=utf-8]
-      date: ['Wed, 21 Nov 2018 11:26:50 GMT']
-      etag: [W/"cc-uSx6TIXO38DfVcMtWxH/1mSTn1s"]
-      x-powered-by: [Express]
-    status: {code: 200, message: OK}
-- request:
-    body: !!python/unicode 'nationality=Moroccan&first_name=test&last_name=test&email=test%40test.com&currency=MAD'
-    headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
-      Connection: [keep-alive]
-      Content-Length: ['86']
-      Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [4e1b70d7-8976-49b3-859e-9a5bb86d40c9]
+      Idempotency-Key: [26abece9-4631-498c-ad15-7c6de61b4302]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/customers
   response:
-    body: {string: !!python/unicode '{"id":"cus_Zc4b2018527k2BM2264611","object":"customer","live_mode":false,"created":"1542864470994","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    body: {string: !!python/unicode '{"id":"cus_Ql4t20182349Hj942452411","object":"customer","live_mode":false,"created":"1543103372732","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['204']
+      content-length: ['205']
       content-type: [application/json; charset=utf-8]
-      date: ['Thu, 22 Nov 2018 02:27:53 GMT']
-      etag: [W/"cc-Tgz9vENECJ0bpyYOiGh/BRN6rKo"]
+      date: ['Sat, 24 Nov 2018 20:49:38 GMT']
+      etag: [W/"cd-kujFKZn89ofdxt+X8BMv9v7zmFQ"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode 'customer[id]=cus_Zc4b2018527k2BM2264611&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
+    body: !!python/unicode 'customer[id]=cus_Ql4t20182349Hj942452411&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
-      Content-Length: ['191']
+      Content-Length: ['192']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [b16c7cbe-b8af-4c7b-8011-89a24969402b]
+      Idempotency-Key: [f55b22b8-be4d-4256-a20c-3fce8c6c1795]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/charges
   response:
-    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_o2J52018527t5TX221411\"\
+    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_Zc4920182349a4K92434111\"\
         ,\r\n  \"object\": \"charge\",\r\n  \"live_mode\": false,\r\n  \"api_version\"\
         : \"V2\",\r\n  \"status\": \"INITIATED\",\r\n  \"amount\": 10.000,\r\n  \"\
         currency\": \"KWD\",\r\n  \"threeDSecure\": true,\r\n  \"save_card\": false,\r\
         \n  \"transaction\": {\r\n    \"timezone\": \"UTC+03:00\",\r\n    \"created\"\
-        : \"1542864476215\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=8OxIRq773%2f3dpwyNCsFiwhxLuPREL19n1i2Y5raIJw8%3d&sess=DMzi5N5Gnpg%3d&token=8OxIRq773%2f3dpwyNCsFiwhxLuPREL19nhGTanwXlhN8%3d\"\
+        : \"1543103377265\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=F6fQ8Y01CiF44G3ChXC4GCxHdtfP%2fWIe4%2f%2f5QDwkpso%3d&sess=S%2b9IiDIfDBA%3d&token=F6fQ8Y01CiF44G3ChXC4GCxHdtfP%2fWIeZb6vXb8x0uM%3d\"\
         \r\n  },\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n    \"message\"\
-        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_Zc4b2018527k2BM2264611\"\
+        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_Ql4t20182349Hj942452411\"\
         \r\n  },\r\n  \"source\": {\r\n    \"object\": \"source\",\r\n    \"id\":\
         \ \"src_all\"\r\n  },\r\n  \"redirect\": {\r\n    \"status\": \"PENDING\"\
         ,\r\n    \"url\": \"http://your_website.com/redirect_url\"\r\n  },\r\n  \"\
@@ -74,35 +51,39 @@ interactions:
         \r\n  }\r\n}"}
     headers:
       connection: [keep-alive]
-      content-length: ['930']
+      content-length: ['939']
       content-type: [application/json]
-      date: ['Thu, 22 Nov 2018 02:27:59 GMT']
-      etag: [W/"3a2-ZmExRoDxhzs8YD4xxjeE+y8ObOk"]
+      date: ['Sat, 24 Nov 2018 20:49:43 GMT']
+      etag: [W/"3ab-K/X+atGQUkz5GgXhkOhuaeJ4HDU"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode 'currency=KWD&reason=requested_by_customer&description=Test+Description&amount=10.0&charge_id=chg_o2J52018527t5TX221411'
+    body: !!python/unicode 'currency=KWD&reason=requested_by_customer&description=Test+Description&amount=10.0&charge_id=chg_Zc4920182349a4K92434111'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
-      Content-Length: ['118']
+      Content-Length: ['120']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [1ef68276-ad94-48c8-92a7-0665eccb7282]
+      Idempotency-Key: [b50d2c28-dcd5-441c-98df-f78cffde309e]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/refunds
   response:
-    body: {string: !!python/unicode "{\r\n  \"errors\": [\r\n    {\r\n      \"code\"\
-        : \"1143\",\r\n      \"description\": \"Charge id is invalid\"\r\n    }\r\n\
-        \  ]\r\n}"}
+    body: {string: !!python/unicode "{\r\n  \"id\": \"re_a9ZK20182351x2HB2465911\"\
+        ,\r\n  \"object\": \"refund\",\r\n  \"api_version\": \"V2\",\r\n  \"live_mode\"\
+        : false,\r\n  \"amount\": 10.0,\r\n  \"charge_id\": \"chg_Zc4920182349a4K92434111\"\
+        ,\r\n  \"created\": \"1543103492926\",\r\n  \"currency\": \"KWD\",\r\n  \"\
+        status\": \"PENDING\",\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n\
+        \    \"message\": \"Pending\"\r\n  },\r\n  \"description\": \"Test Description\"\
+        ,\r\n  \"reason\": \"requested_by_customer\"\r\n}"}
     headers:
       connection: [keep-alive]
-      content-length: ['106']
+      content-length: ['400']
       content-type: [application/json]
-      date: ['Thu, 22 Nov 2018 02:28:02 GMT']
-      etag: [W/"6a-vML+xJNVZ+ko3wE5htexAUqxrNg"]
+      date: ['Sat, 24 Nov 2018 20:51:38 GMT']
+      etag: [W/"190-oD0/GVhCSlJLUBcuOZbUMuwkWa8"]
       x-powered-by: [Express]
-    status: {code: 400, message: Bad Request}
+    status: {code: 200, message: OK}
 version: 1

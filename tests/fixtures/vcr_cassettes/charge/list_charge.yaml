@@ -8,42 +8,42 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['86']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [7bde41e2-2902-4808-a940-b59ee9745d8b]
+      Idempotency-Key: [97b359fd-7743-47ac-b684-42529a13e794]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/customers
   response:
-    body: {string: !!python/unicode '{"id":"cus_Mh5k2018525Lu922279611","object":"customer","live_mode":false,"created":"1542864359035","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
+    body: {string: !!python/unicode '{"id":"cus_p9R520182341k2B52482311","object":"customer","live_mode":false,"created":"1543102880136","currency":"MAD","nationality":"Moroccan","first_name":"test","last_name":"test","email":"test@test.com"}'}
     headers:
       connection: [keep-alive]
-      content-length: ['204']
+      content-length: ['205']
       content-type: [application/json; charset=utf-8]
-      date: ['Thu, 22 Nov 2018 02:26:01 GMT']
-      etag: [W/"cc-SKIYlgMZbN29VQwPOmhIAMjip98"]
+      date: ['Sat, 24 Nov 2018 20:41:25 GMT']
+      etag: [W/"cd-3KDTvE+SuvMFSycmQ+I2QV0nww8"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
-    body: !!python/unicode 'customer[id]=cus_Mh5k2018525Lu922279611&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
+    body: !!python/unicode 'customer[id]=cus_p9R520182341k2B52482311&redirect[url]=http%3A%2F%2Fyour_website.com%2Fredirect_url&source[id]=src_all&currency=KWD&amount=10&post[url]=http%3A%2F%2Fyour_website.com%2Fpost_url'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
-      Content-Length: ['191']
+      Content-Length: ['192']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [8eadaed1-9492-4e98-8bed-3bff8cec11ef]
+      Idempotency-Key: [f8e63dbb-c7dd-47b5-8cac-f37709ef8f17]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/charges
   response:
-    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_j2KN2018526Kj922281711\"\
+    body: {string: !!python/unicode "{\r\n  \"id\": \"chg_t4QR20182341w9P42474111\"\
         ,\r\n  \"object\": \"charge\",\r\n  \"live_mode\": false,\r\n  \"api_version\"\
         : \"V2\",\r\n  \"status\": \"INITIATED\",\r\n  \"amount\": 10.000,\r\n  \"\
         currency\": \"KWD\",\r\n  \"threeDSecure\": true,\r\n  \"save_card\": false,\r\
         \n  \"transaction\": {\r\n    \"timezone\": \"UTC+03:00\",\r\n    \"created\"\
-        : \"1542864364032\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=Fm2n%2bgtUzNoX2uXYz%2fy55NcUkEEBj8YV0DWorcxtb6Y%3d&sess=G%2fIl4qQ2cn8%3d&token=Fm2n%2bgtUzNoX2uXYz%2fy55NcUkEEBj8YVW1xDOVlh01U%3d\"\
+        : \"1543102884635\",\r\n    \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=D2%2fN03igMZqx%2fTL98mmYNz9sDpY6tgDJ4%2f%2f5QDwkpso%3d&sess=ekAAvjT4QYo%3d&token=D2%2fN03igMZqx%2fTL98mmYNz9sDpY6tgDJ%2fuCjPTl0k5I%3d\"\
         \r\n  },\r\n  \"response\": {\r\n    \"code\": \"100\",\r\n    \"message\"\
-        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_Mh5k2018525Lu922279611\"\
+        : \"Initiated\"\r\n  },\r\n  \"customer\": {\r\n    \"id\": \"cus_p9R520182341k2B52482311\"\
         \r\n  },\r\n  \"source\": {\r\n    \"object\": \"source\",\r\n    \"id\":\
         \ \"src_all\"\r\n  },\r\n  \"redirect\": {\r\n    \"status\": \"PENDING\"\
         ,\r\n    \"url\": \"http://your_website.com/redirect_url\"\r\n  },\r\n  \"\
@@ -51,35 +51,633 @@ interactions:
         \r\n  }\r\n}"}
     headers:
       connection: [keep-alive]
-      content-length: ['937']
+      content-length: ['943']
       content-type: [application/json]
-      date: ['Thu, 22 Nov 2018 02:26:07 GMT']
-      etag: [W/"3a9-Wt4UuDLDGZyS1Gr3g8J6HIw8bjI"]
+      date: ['Sat, 24 Nov 2018 20:41:30 GMT']
+      etag: [W/"3af-/c/S3hgEqZs9qmS2AB33xl5GB7Q"]
       x-powered-by: [Express]
     status: {code: 200, message: OK}
 - request:
-    body: null
+    body: !!python/unicode 'status=&starting_after=&limit=25&period[date][from]=1516315144000&period[date][to]=1545172744000'
     headers:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Authorization: [Bearer sk_test_XKokBfNWv6FIYuTMg5sLPjhJ]
       Connection: [keep-alive]
-      Content-Length: ['0']
+      Content-Length: ['96']
       Content-Type: [application/x-www-form-urlencoded]
-      Idempotency-Key: [00e90a85-5815-4461-a471-b955c7c33678]
+      Idempotency-Key: [320c7838-df7f-4136-8179-24a261b6eacf]
       User-Agent: [python-requests/2.20.1]
     method: POST
     uri: https://api.tap.company/v2/charges/list
   response:
-    body: {string: !!python/unicode "{\r\n  \"errors\": [\r\n    {\r\n      \"code\"\
-        : \"1144\",\r\n      \"description\": \"Charge not found\"\r\n    }\r\n  ]\r\
-        \n}"}
+    body: {string: !!python/unicode "{\r\n  \"object\": \"list\",\r\n  \"live_mode\"\
+        : false,\r\n  \"count\": 25,\r\n  \"has_more\": true,\r\n  \"api_version\"\
+        : \"V2\",\r\n  \"charges\": [\r\n    {\r\n      \"id\": \"chg_Zy9m20181622h5KN2951910\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"\
+        amount\": 1.0,\r\n      \"currency\": \"BHD\",\r\n      \"threeDSecure\":\
+        \ true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Sample\",\r\n      \"description\": \"Test Description\",\r\n      \"\
+        metadata\": {\r\n        \"udf1\": \"test 1\",\r\n        \"udf2\": \"test\
+        \ 2\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\": \"\
+        UTC+03:00\",\r\n        \"created\": \"1540830133736\"\r\n      },\r\n   \
+        \   \"reference\": {\r\n        \"track\": \"tck_Yh4i20181622Xa5q2978710\"\
+        ,\r\n        \"payment\": \"pay_Xl4u20181622c5LK2978710\",\r\n        \"transaction\"\
+        : \"txn_0002\",\r\n        \"order\": \"ord_0002\"\r\n      },\r\n      \"\
+        response\": {\r\n        \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\
+        \r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"2018102916221428\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": true\r\n      },\r\n  \
+        \    \"customer\": {\r\n        \"first_name\": \"test\",\r\n        \"middle_name\"\
+        : \"test\",\r\n        \"last_name\": \"test\",\r\n        \"email\": \"test@test.com\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"50000000\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"id\": \"src_card\"\r\n\
+        \      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://nuzhaapp.com/cmsAdmin\"\r\n      },\r\n      \"\
+        post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\": \"http://nuzhaapp.com/cmsAdmin\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zy9k20182022b5LR0997610\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"\
+        amount\": 60.0,\r\n      \"currency\": \"BHD\",\r\n      \"threeDSecure\"\
+        : false,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\"\
+        : \"Buy Crowns & Bridges\",\r\n      \"description\": \"test\",\r\n      \"\
+        metadata\": {\r\n        \"udf2\": \"test\"\r\n      },\r\n      \"transaction\"\
+        : {\r\n        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1539116526216\"\
+        ,\r\n        \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=bOSmrpvTKt2lZ6zb7AsgZYl%2bj2aQ2hs1Mwt%2bat09x%2bM%3d&sess=bsg3DtQgB0o%3d&token=bOSmrpvTKt2lZ6zb7AsgZYl%2bj2aQ2hs1H7qjpqUYHJw%3d\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"transaction\": \"95\"\
+        ,\r\n        \"order\": \"95\"\r\n      },\r\n      \"response\": {\r\n  \
+        \      \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\r\n      },\r\
+        \n      \"receipt\": {\r\n        \"id\": \"2018100920220672\",\r\n      \
+        \  \"email\": false,\r\n        \"sms\": true\r\n      },\r\n      \"customer\"\
+        : {\r\n        \"first_name\": \"Samy\",\r\n        \"last_name\": \"Samy\"\
+        ,\r\n        \"email\": \"samymassoud@gmail.com\",\r\n        \"phone\": {\r\
+        \n          \"country_code\": \"973\",\r\n          \"number\": \"50000000\"\
+        \r\n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"\
+        source\",\r\n        \"id\": \"src_card\"\r\n      },\r\n      \"redirect\"\
+        : {\r\n        \"status\": \"ABANDONED\",\r\n        \"url\": \"http://localhost:8888/tabibdeals/public/payment-callback\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"UNKNOWN\",\r\n\
+        \        \"url\": \"http://localhost:8888/tabibdeals/public/payment-callback\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zy942018957Rb5e2320311\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"\
+        amount\": 5.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\":\
+        \ true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Khalasani TAP Sample\",\r\n      \"description\": \"Khalasani TAP Test\
+        \ Description\",\r\n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\"\
+        ,\r\n        \"created\": \"1542967049448\"\r\n      },\r\n      \"reference\"\
+        : {\r\n        \"track\": \"tck_o9BP2018957Bh9m2312011\",\r\n        \"payment\"\
+        : \"23201895712011871\",\r\n        \"gateway\": \"00\"\r\n      },\r\n  \
+        \    \"response\": {\r\n        \"code\": \"301\",\r\n        \"message\"\
+        : \"Abandoned\"\r\n      },\r\n      \"card\": {\r\n        \"object\": \"\
+        card\",\r\n        \"first_six\": \"512345\",\r\n        \"last_four\": \"\
+        0008\"\r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"20181123095733677\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": true\r\n      },\r\n  \
+        \    \"customer\": {\r\n        \"first_name\": \"Nikhil\",\r\n        \"\
+        phone\": {\r\n          \"country_code\": \"965\",\r\n          \"number\"\
+        : \"9643685870\"\r\n        }\r\n      },\r\n      \"source\": {\r\n     \
+        \   \"object\": \"token\",\r\n        \"type\": \"CARD_NOT_PRESENT\",\r\n\
+        \        \"payment_type\": \"CREDIT\",\r\n        \"payment_method\": \"MASTERCARD\"\
+        ,\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"tok_svUTcO2B7FK6baXl8uIVqAyr\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    },\r\n    {\r\n \
+        \     \"id\": \"chg_Zy4920181911Hj490997109\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V1.2\",\r\n \
+        \     \"status\": \"CAPTURED\",\r\n      \"amount\": 1.0,\r\n      \"currency\"\
+        : \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"save_card\": false,\r\
+        \n      \"statement_descriptor\": \"Sample\",\r\n      \"description\": \"\
+        Test Description\",\r\n      \"metadata\": {\r\n        \"udf1\": \"test 1\"\
+        ,\r\n        \"udf2\": \"test 2\"\r\n      },\r\n      \"transaction\": {\r\
+        \n        \"authorization_id\": \"355105\",\r\n        \"timezone\": \"UTC+03:00\"\
+        ,\r\n        \"created\": \"1536520293049\"\r\n      },\r\n      \"reference\"\
+        : {\r\n        \"track\": \"tck_e9F420181911m2T90928409\",\r\n        \"gateway\"\
+        : \"6884366121982520\",\r\n        \"acquirer\": \"825219616777\",\r\n   \
+        \     \"transaction\": \"txn_0001\",\r\n        \"order\": \"ord_0001\"\r\n\
+        \      },\r\n      \"response\": {\r\n        \"code\": \"000\",\r\n     \
+        \   \"message\": \"Captured\"\r\n      },\r\n      \"receipt\": {\r\n    \
+        \    \"id\": \"20180909191136549\",\r\n        \"email\": false,\r\n     \
+        \   \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"id\"\
+        : \"cus_o9X220181911Oy490959609\",\r\n        \"first_name\": \"test\",\r\n\
+        \        \"middle_name\": \"test\",\r\n        \"last_name\": \"test\",\r\n\
+        \        \"email\": \"test@test.com\",\r\n        \"phone\": {\r\n       \
+        \   \"country_code\": \"965\",\r\n          \"number\": \"50000000\"\r\n \
+        \       }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"source\"\
+        ,\r\n        \"type\": \"CARD_PRESENT\",\r\n        \"payment_type\": \"DEBIT_CARD\"\
+        ,\r\n        \"payment_method\": \"KNET\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"src_kw.knet\"\r\n      },\r\n      \"redirect\": {\r\
+        \n        \"status\": \"PENDING\",\r\n        \"url\": \"http://your_website.com/redirect_url\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://your_website.com/redirect_url\"\r\n      }\r\n\
+        \    },\r\n    {\r\n      \"id\": \"chg_Zx9r20181020Fb420614910\",\r\n   \
+        \   \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\"\
+        : \"V1.2\",\r\n      \"status\": \"CANCELLED\",\r\n      \"amount\": 200.0,\r\
+        \n      \"currency\": \"KWD\",\r\n      \"threeDSecure\": false,\r\n     \
+        \ \"save_card\": false,\r\n      \"description\": \"\",\r\n      \"transaction\"\
+        : {\r\n        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1538821202396\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"track\": \"tck_n4LO20181020h9N40656310\"\
+        \r\n      },\r\n      \"response\": {\r\n        \"code\": \"302\",\r\n  \
+        \      \"message\": \"Cancelled\"\r\n      },\r\n      \"receipt\": {\r\n\
+        \        \"id\": \"20181006102003826\",\r\n        \"email\": false,\r\n \
+        \       \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"\
+        first_name\": \"Bibin\",\r\n        \"last_name\": \"Augustine\",\r\n    \
+        \    \"email\": \"bibin@markuplab.net\",\r\n        \"phone\": {\r\n     \
+        \     \"country_code\": \"965\",\r\n          \"number\": \"1245788596\"\r\
+        \n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"source\"\
+        ,\r\n        \"type\": \"CARD_PRESENT\",\r\n        \"payment_type\": \"DEBIT_CARD\"\
+        ,\r\n        \"payment_method\": \"KNET\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"src_kw.knet\"\r\n      },\r\n      \"redirect\": {\r\
+        \n        \"status\": \"SUCCESS\",\r\n        \"url\": \"http://lose-gain-2.kpgtc.net/ar/payments/result\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"ERROR\",\r\n  \
+        \      \"url\": \"http://lose-gain-2.kpgtc.net/ar/payments/post\"\r\n    \
+        \  }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zx9520181418Kt992781609\",\r\
+        \n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n      \"\
+        api_version\": \"V1.2\",\r\n      \"status\": \"INITIATED\",\r\n      \"amount\"\
+        : 160.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\
+        \n      \"save_card\": false,\r\n      \"description\": \"\",\r\n      \"\
+        metadata\": {\r\n        \"udf1\": \"test 1\"\r\n      },\r\n      \"transaction\"\
+        : {\r\n        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1538057909128\"\
+        ,\r\n        \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=SzYqk0Xt1KCWxX78YYM7P%2bp4zGqcbCEKkSTgDIW3K6Q%3d&sess=swX6K5JJ%2f8M%3d&token=SzYqk0Xt1KCWxX78YYM7P%2bp4zGqcbCEK3yQ%2fyazpiJg%3d\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"transaction\": \"327512722\"\
+        ,\r\n        \"order\": \"12722\"\r\n      },\r\n      \"response\": {\r\n\
+        \        \"code\": \"100\",\r\n        \"message\": \"Initiated\"\r\n    \
+        \  },\r\n      \"receipt\": {\r\n        \"email\": false,\r\n        \"sms\"\
+        : false\r\n      },\r\n      \"customer\": {\r\n        \"first_name\": \"\
+        Bishwajeet\",\r\n        \"email\": \"bishwajeet@getbaqala.com\"\r\n     \
+        \ },\r\n      \"source\": {\r\n        \"object\": \"source\",\r\n       \
+        \ \"id\": \"src_card\"\r\n      },\r\n      \"redirect\": {\r\n        \"\
+        status\": \"PENDING\",\r\n        \"url\": \"http://18.237.134.144/getbaqala_api/v3/onlinepaymentredirect.php\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zx9220181436k4NK2443510\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"\
+        amount\": 335.626,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\"\
+        : true,\r\n      \"save_card\": false,\r\n      \"description\": \"\",\r\n\
+        \      \"metadata\": {\r\n        \"udf1\": \"1APRO4_M0cA\",\r\n        \"\
+        udf2\": \"335.625\",\r\n        \"udf3\": \"en\",\r\n        \"udf4\": \"\
+        1\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\"\
+        ,\r\n        \"created\": \"1540391778654\"\r\n      },\r\n      \"reference\"\
+        : {\r\n        \"track\": \"tck_b5P920181436Rn422445110\",\r\n        \"payment\"\
+        : \"pay_p9JQ20181436r4HP2445110\",\r\n        \"transaction\": \"8921771_F_CB4667\"\
+        \r\n      },\r\n      \"response\": {\r\n        \"code\": \"301\",\r\n  \
+        \      \"message\": \"Abandoned\"\r\n      },\r\n      \"card\": {\r\n   \
+        \     \"object\": \"card\",\r\n        \"first_six\": \"450875\",\r\n    \
+        \    \"last_four\": \"1019\"\r\n      },\r\n      \"receipt\": {\r\n     \
+        \   \"id\": \"20181024143623362\",\r\n        \"email\": true,\r\n       \
+        \ \"sms\": true\r\n      },\r\n      \"customer\": {\r\n        \"first_name\"\
+        : \"shafas\",\r\n        \"last_name\": \"caxita\",\r\n        \"email\":\
+        \ \"shafas.e@caxita.com\",\r\n        \"phone\": {\r\n          \"country_code\"\
+        : \"+1268\",\r\n          \"number\": \"76965785675\"\r\n        }\r\n   \
+        \   },\r\n      \"source\": {\r\n        \"object\": \"token\",\r\n      \
+        \  \"type\": \"CARD_NOT_PRESENT\",\r\n        \"payment_type\": \"DEBIT\"\
+        ,\r\n        \"payment_method\": \"VISA\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"tok_UYnfWC1O6v59ZMTzlmFSVqy3\"\r\n      },\r\n    \
+        \  \"redirect\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://localhost:1999/en/Shared/PaymentResponse?sID=1APRO4_M0cA\"\r\n\
+        \      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n   \
+        \     \"url\": \"http://return.com/posturl\"\r\n      }\r\n    },\r\n    {\r\
+        \n      \"id\": \"chg_Zx5y2018348n4HH2031011\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V2\",\r\n   \
+        \   \"status\": \"ABANDONED\",\r\n      \"amount\": 101.5,\r\n      \"currency\"\
+        : \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"save_card\": false,\r\
+        \n      \"description\": \"\",\r\n      \"transaction\": {\r\n        \"timezone\"\
+        : \"UTC+03:00\",\r\n        \"created\": \"1542685698519\"\r\n      },\r\n\
+        \      \"reference\": {\r\n        \"track\": \"tck_u4JR2018348m5HB2049811\"\
+        ,\r\n        \"payment\": \"20201834849811605\",\r\n        \"gateway\": \"\
+        00\"\r\n      },\r\n      \"response\": {\r\n        \"code\": \"301\",\r\n\
+        \        \"message\": \"Abandoned\"\r\n      },\r\n      \"card\": {\r\n \
+        \       \"object\": \"card\",\r\n        \"first_six\": \"512345\",\r\n  \
+        \      \"last_four\": \"0008\"\r\n      },\r\n      \"receipt\": {\r\n   \
+        \     \"id\": \"20181120034821972\",\r\n        \"email\": false,\r\n    \
+        \    \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"first_name\"\
+        : \"first\",\r\n        \"last_name\": \"last\",\r\n        \"email\": \"\
+        test@test.com\",\r\n        \"phone\": {\r\n          \"country_code\": \"\
+        0\",\r\n          \"number\": \"\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"token\",\r\n        \"type\": \"CARD_NOT_PRESENT\"\
+        ,\r\n        \"payment_type\": \"CREDIT\",\r\n        \"payment_method\":\
+        \ \"MASTERCARD\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\"\
+        : \"tok_RjO0KXMzY1trgULHeldcGZBo\"\r\n      },\r\n      \"redirect\": {\r\n\
+        \        \"status\": \"PENDING\",\r\n        \"url\": \"http://localhost:3000/user_landing\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://170b112c.ngrok.io/api/1/tap/charge\"\r\n      }\r\
+        \n    },\r\n    {\r\n      \"id\": \"chg_Zx5420181459Ye4y2286611\",\r\n  \
+        \    \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\"\
+        : \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"amount\": 5.0,\r\n\
+        \      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"\
+        save_card\": false,\r\n      \"statement_descriptor\": \"Khalasani TAP Sample\"\
+        ,\r\n      \"description\": \"Khalasani TAP Test Description\",\r\n      \"\
+        transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n        \"created\"\
+        : \"1542898785067\"\r\n      },\r\n      \"reference\": {\r\n        \"track\"\
+        : \"tck_u9K420181459Ft4o2242111\",\r\n        \"payment\": \"222018145942111139\"\
+        ,\r\n        \"gateway\": \"gt_Ri4520181531y2H42288211\"\r\n      },\r\n \
+        \     \"response\": {\r\n        \"code\": \"301\",\r\n        \"message\"\
+        : \"Abandoned\"\r\n      },\r\n      \"card\": {\r\n        \"object\": \"\
+        card\",\r\n        \"first_six\": \"512345\",\r\n        \"last_four\": \"\
+        0008\"\r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"20181122145949355\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": true\r\n      },\r\n  \
+        \    \"customer\": {\r\n        \"first_name\": \"Nikhil\",\r\n        \"\
+        phone\": {\r\n          \"country_code\": \"965\",\r\n          \"number\"\
+        : \"9643685870\"\r\n        }\r\n      },\r\n      \"source\": {\r\n     \
+        \   \"object\": \"token\",\r\n        \"type\": \"CARD_NOT_PRESENT\",\r\n\
+        \        \"payment_type\": \"CREDIT\",\r\n        \"payment_method\": \"MASTERCARD\"\
+        ,\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"tok_joxOSWrpa6imgCzGFAPJ7IKY\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    },\r\n    {\r\n \
+        \     \"id\": \"chg_Zx5420181323Bk49034410\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V1.2\",\r\n \
+        \     \"status\": \"INITIATED\",\r\n      \"amount\": 80.0,\r\n      \"currency\"\
+        : \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"save_card\": false,\r\
+        \n      \"statement_descriptor\": \"Abayti\",\r\n      \"description\": \"\
+        Abayti shopping\",\r\n      \"metadata\": {\r\n        \"order_number\": \"\
+        7\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\"\
+        ,\r\n        \"created\": \"1538573019606\",\r\n        \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=GauFy4TETul7A1H5gaO0gU76qgaj7h2Hbhn4OckwYLY%3d&sess=pghPioKLXog%3d&token=GauFy4TETul7A1H5gaO0gU76qgaj7h2HXM%2fta%2fsuXuk%3d\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"transaction\": \"72136351\"\
+        ,\r\n        \"order\": \"7\"\r\n      },\r\n      \"response\": {\r\n   \
+        \     \"code\": \"100\",\r\n        \"message\": \"Initiated\"\r\n      },\r\
+        \n      \"customer\": {\r\n        \"first_name\": \"Baba\",\r\n        \"\
+        email\": \"yousufisin@hotmail.com\",\r\n        \"phone\": {\r\n         \
+        \ \"country_code\": \"965\",\r\n          \"number\": \"64312456\"\r\n   \
+        \     }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"source\"\
+        ,\r\n        \"id\": \"src_all\"\r\n      },\r\n      \"redirect\": {\r\n\
+        \        \"status\": \"PENDING\",\r\n        \"url\": \"http://admin.abaytiapp.com/site/tap-response?order_id=7&total=80\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://admin.abaytiapp.com/site/tap-response?order_id=7&total=80\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zx4k20181523w4L52131711\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"CAPTURED\",\r\n      \"\
+        amount\": 5.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\":\
+        \ true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Khalasani TAP Sample\",\r\n      \"description\": \"Khalasani TAP Test\
+        \ Description\",\r\n      \"transaction\": {\r\n        \"authorization_id\"\
+        : \"239348\",\r\n        \"timezone\": \"UTC+03:00\",\r\n        \"created\"\
+        : \"1542813833522\"\r\n      },\r\n      \"reference\": {\r\n        \"track\"\
+        : \"tck_Pm9520181523Tx492167211\",\r\n        \"payment\": \"212018152367211437\"\
+        ,\r\n        \"gateway\": \"9665929251583250\",\r\n        \"acquirer\": \"\
+        832515481726\"\r\n      },\r\n      \"response\": {\r\n        \"code\": \"\
+        000\",\r\n        \"message\": \"Captured\"\r\n      },\r\n      \"receipt\"\
+        : {\r\n        \"id\": \"20181121152354863\",\r\n        \"email\": false,\r\
+        \n        \"sms\": true\r\n      },\r\n      \"customer\": {\r\n        \"\
+        id\": \"cus_o2OL20181523i4PZ2145811\",\r\n        \"first_name\": \"Test iOS\
+        \ User\",\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\
+        \n          \"number\": \"9643685870\"\r\n        }\r\n      },\r\n      \"\
+        source\": {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_NOT_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT\",\r\n        \"payment_method\": \"\
+        KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    },\r\n    {\r\n \
+        \     \"id\": \"chg_Zx4a20181820r5P91888810\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V2\",\r\n   \
+        \   \"status\": \"ABANDONED\",\r\n      \"amount\": 1.0,\r\n      \"currency\"\
+        : \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"save_card\": false,\r\
+        \n      \"statement_descriptor\": \"Sample\",\r\n      \"description\": \"\
+        Test Description\",\r\n      \"metadata\": {\r\n        \"udf1\": \"test 1\"\
+        ,\r\n        \"udf2\": \"test 2\"\r\n      },\r\n      \"transaction\": {\r\
+        \n        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1539886815810\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"track\": \"tck_s2HO20181820e5R91820110\"\
+        ,\r\n        \"payment\": \"pay_y4H420181820s5N41820110\",\r\n        \"transaction\"\
+        : \"txn_0001\",\r\n        \"order\": \"ord_0001\"\r\n      },\r\n      \"\
+        response\": {\r\n        \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\
+        \r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"20181018182021419\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": false\r\n      },\r\n \
+        \     \"customer\": {\r\n        \"first_name\": \"test\",\r\n        \"middle_name\"\
+        : \"test\",\r\n        \"last_name\": \"test\",\r\n        \"email\": \"test@test.com\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"50000000\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT_CARD\",\r\n        \"payment_method\"\
+        : \"KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    },\r\n    {\r\n \
+        \     \"id\": \"chg_Zx492018957t9DL0551010\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V1.2\",\r\n \
+        \     \"status\": \"FAILED\",\r\n      \"amount\": 80.0,\r\n      \"currency\"\
+        : \"KWD\",\r\n      \"threeDSecure\": false,\r\n      \"save_card\": false,\r\
+        \n      \"description\": \"\",\r\n      \"transaction\": {\r\n        \"timezone\"\
+        : \"UTC+03:00\",\r\n        \"created\": \"1538733436800\"\r\n      },\r\n\
+        \      \"reference\": {\r\n        \"track\": \"tck_Rq522018957w5J2051410\"\
+        ,\r\n        \"gateway\": \"3023033101082780\",\r\n        \"acquirer\": \"\
+        827810706561\"\r\n      },\r\n      \"response\": {\r\n        \"code\": \"\
+        401\",\r\n        \"message\": \"Failed\"\r\n      },\r\n      \"receipt\"\
+        : {\r\n        \"id\": \"20181005095719374\",\r\n        \"email\": false,\r\
+        \n        \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"\
+        first_name\": \"Abhiram\",\r\n        \"last_name\": \"R\",\r\n        \"\
+        email\": \"abhiram@markuplab.net\",\r\n        \"phone\": {\r\n          \"\
+        country_code\": \"965\",\r\n          \"number\": \"9495844709\"\r\n     \
+        \   }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"source\"\
+        ,\r\n        \"type\": \"CARD_PRESENT\",\r\n        \"payment_type\": \"DEBIT_CARD\"\
+        ,\r\n        \"payment_method\": \"KNET\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"src_kw.knet\"\r\n      },\r\n      \"redirect\": {\r\
+        \n        \"status\": \"SUCCESS\",\r\n        \"url\": \"http://localhost:61761/payments/result\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"ERROR\",\r\n  \
+        \      \"url\": \"http://localhost:61761/payments/post\"\r\n      }\r\n  \
+        \  },\r\n    {\r\n      \"id\": \"chg_Zx4520181024Hy9b2983710\",\r\n     \
+        \ \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\"\
+        : \"V2\",\r\n      \"status\": \"DECLINED\",\r\n      \"amount\": 145.934,\r\
+        \n      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"\
+        save_card\": false,\r\n      \"description\": \"\",\r\n      \"metadata\"\
+        : {\r\n        \"udf1\": \"5PLWKC_Alkl\",\r\n        \"udf2\": \"145.93425\"\
+        ,\r\n        \"udf3\": \"ar\",\r\n        \"udf4\": \"1\"\r\n      },\r\n\
+        \      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n    \
+        \    \"created\": \"1540808692103\"\r\n      },\r\n      \"reference\": {\r\
+        \n        \"track\": \"tck_Rp9b20181024r2XO2980910\",\r\n        \"payment\"\
+        : \"pay_Mm2420181024Fn2r2980910\",\r\n        \"transaction\": \"2147279_F_CB4729\"\
+        \r\n      },\r\n      \"response\": {\r\n        \"code\": \"503\",\r\n  \
+        \      \"message\": \"Declined, 3D Security - Incorrect\"\r\n      },\r\n\
+        \      \"card\": {\r\n        \"object\": \"card\",\r\n        \"first_six\"\
+        : \"512345\",\r\n        \"last_four\": \"0008\"\r\n      },\r\n      \"receipt\"\
+        : {\r\n        \"id\": \"20181029102456296\",\r\n        \"email\": true,\r\
+        \n        \"sms\": true\r\n      },\r\n      \"customer\": {\r\n        \"\
+        first_name\": \"krishna\",\r\n        \"last_name\": \"midhila\",\r\n    \
+        \    \"email\": \"krishna.u@caxita.com\",\r\n        \"phone\": {\r\n    \
+        \      \"country_code\": \"+91\",\r\n          \"number\": \"9846490055\"\r\
+        \n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"token\"\
+        ,\r\n        \"type\": \"CARD_NOT_PRESENT\",\r\n        \"payment_type\":\
+        \ \"CREDIT\",\r\n        \"payment_method\": \"MASTERCARD\",\r\n        \"\
+        channel\": \"INTERNET\",\r\n        \"id\": \"tok_qQPAe71bOmdGsI8wBf2oa5xX\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"SUCCESS\",\r\
+        \n        \"url\": \"http://192.168.1.100/citybookerscrt/ar/Shared/PaymentResponse?sID=5PLWKC_Alkl\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"ERROR\",\r\n  \
+        \      \"url\": \"http://return.com/posturl\"\r\n      }\r\n    },\r\n   \
+        \ {\r\n      \"id\": \"chg_Zx2r2018920Ra420962911\",\r\n      \"object\":\
+        \ \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\": \"\
+        V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"amount\": 84.98,\r\n\
+        \      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"\
+        save_card\": false,\r\n      \"statement_descriptor\": \"Sample\",\r\n   \
+        \   \"description\": \"Test Description\",\r\n      \"metadata\": {\r\n  \
+        \      \"udf1\": \"test 1\",\r\n        \"udf2\": \"test 2\"\r\n      },\r\
+        \n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n   \
+        \     \"created\": \"1541755247896\"\r\n      },\r\n      \"reference\": {\r\
+        \n        \"track\": \"tck_Th5o2018920l4BT0994811\",\r\n        \"payment\"\
+        : \"pay_r9D22018920Hw590994811\",\r\n        \"gateway\": \"gt_Hr512018953g3LK0951411\"\
+        ,\r\n        \"transaction\": \"E8B1B08BFB654\",\r\n        \"order\": \"\
+        E8B1B08BFB654\"\r\n      },\r\n      \"response\": {\r\n        \"code\":\
+        \ \"301\",\r\n        \"message\": \"Abandoned\"\r\n      },\r\n      \"card\"\
+        : {\r\n        \"object\": \"card\",\r\n        \"first_six\": \"512345\"\
+        ,\r\n        \"last_four\": \"0008\"\r\n      },\r\n      \"receipt\": {\r\
+        \n        \"id\": \"20181109092052415\",\r\n        \"email\": true,\r\n \
+        \       \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"\
+        first_name\": \"Prince\",\r\n        \"last_name\": \"Singh\",\r\n       \
+        \ \"email\": \"princes@tiinfotech.com\",\r\n        \"phone\": {\r\n     \
+        \     \"country_code\": \"+91\",\r\n          \"number\": \"9818530466\"\r\
+        \n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"token\"\
+        ,\r\n        \"type\": \"CARD_NOT_PRESENT\",\r\n        \"payment_type\":\
+        \ \"CREDIT\",\r\n        \"payment_method\": \"MASTERCARD\",\r\n        \"\
+        channel\": \"INTERNET\",\r\n        \"id\": \"tok_QnHZekb7DlGjgcK2ErXW4tTM\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://uattcs4.travelcloudsuite.com/TAP/TAPResponse\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://uattcs4.travelcloudsuite.com/TAP/TAPResponse\"\r\
+        \n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zw9s2018747Lj952563209\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V1.2\",\r\n      \"status\": \"ABANDONED\",\r\n    \
+        \  \"amount\": 5000.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\"\
+        : false,\r\n      \"save_card\": false,\r\n      \"description\": \"\",\r\n\
+        \      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n    \
+        \    \"created\": \"1537861647945\"\r\n      },\r\n      \"reference\": {},\r\
+        \n      \"response\": {\r\n        \"code\": \"301\",\r\n        \"message\"\
+        : \"Abandoned\"\r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"\
+        20180925074730492\",\r\n        \"email\": false,\r\n        \"sms\": false\r\
+        \n      },\r\n      \"customer\": {\r\n        \"first_name\": \"Abhiram\"\
+        ,\r\n        \"last_name\": \"R\",\r\n        \"email\": \"abhiram@markuplab.net\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"9495844709\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT_CARD\",\r\n        \"payment_method\"\
+        : \"KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://localhost:61761/payments/resultyoga\"\r\n    \
+        \  },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n       \
+        \ \"url\": \"http://localhost:61761/payments/post\"\r\n      }\r\n    },\r\
+        \n    {\r\n      \"id\": \"chg_Zw9g2018947h5R90545411\",\r\n      \"object\"\
+        : \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\": \"\
+        V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"amount\": 100.0,\r\n\
+        \      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"\
+        save_card\": false,\r\n      \"statement_descriptor\": \"Sample\",\r\n   \
+        \   \"description\": \"Test Description\",\r\n      \"transaction\": {\r\n\
+        \        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1541411253641\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"track\": \"tck_Ty4r2018947Ht9k0582911\"\
+        ,\r\n        \"payment\": \"pay_Hq9e2018947Kk4g0582911\",\r\n        \"transaction\"\
+        : \"txn_0001\",\r\n        \"order\": \"ord_0001\"\r\n      },\r\n      \"\
+        response\": {\r\n        \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\
+        \r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"20181105094736657\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": true\r\n      },\r\n  \
+        \    \"customer\": {\r\n        \"first_name\": \"test\",\r\n        \"middle_name\"\
+        : \"test\",\r\n        \"last_name\": \"test\",\r\n        \"email\": \"test@test.com\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"50000000\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_NOT_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT\",\r\n        \"payment_method\": \"\
+        KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://localhost:3001\"\r\n      },\r\n      \"post\"\
+        : {\r\n        \"status\": \"PENDING\",\r\n        \"url\": \"http://localhost:3001\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zw942018355c4T93189110\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"CAPTURED\",\r\n      \"\
+        amount\": 101.500,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\"\
+        : false,\r\n      \"save_card\": false,\r\n      \"description\": \"\",\r\n\
+        \      \"transaction\": {\r\n        \"authorization_id\": \"029513\",\r\n\
+        \        \"timezone\": \"UTC+03:00\",\r\n        \"created\": \"1540958131113\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"track\": \"tck_Rn542018355l2ZO3178510\"\
+        ,\r\n        \"payment\": \"pay_Zb5t2018355y2P43178510\",\r\n        \"gateway\"\
+        : \"123456789012345\",\r\n        \"acquirer\": \"830400029513\"\r\n     \
+        \ },\r\n      \"response\": {\r\n        \"code\": \"000\",\r\n        \"\
+        message\": \"Captured\"\r\n      },\r\n      \"acquirer\": {\r\n        \"\
+        response\": {\r\n          \"code\": \"00\",\r\n          \"message\": \"\
+        Approved\"\r\n        }\r\n      },\r\n      \"card\": {\r\n        \"object\"\
+        : \"card\",\r\n        \"first_six\": \"401200\",\r\n        \"last_four\"\
+        : \"0026\"\r\n      },\r\n      \"receipt\": {\r\n        \"id\": \"20181031035535374\"\
+        ,\r\n        \"email\": false,\r\n        \"sms\": false\r\n      },\r\n \
+        \     \"customer\": {\r\n        \"id\": \"cus_p9K52018355Yt9j3139610\",\r\
+        \n        \"first_name\": \"first\",\r\n        \"last_name\": \"last\",\r\
+        \n        \"email\": \"test@test.com\",\r\n        \"phone\": {\r\n      \
+        \    \"country_code\": \"0\",\r\n          \"number\": \"\"\r\n        }\r\
+        \n      },\r\n      \"source\": {\r\n        \"object\": \"token\",\r\n  \
+        \      \"type\": \"CARD_NOT_PRESENT\",\r\n        \"payment_type\": \"CREDIT\"\
+        ,\r\n        \"payment_method\": \"VISA\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"tok_qmk4jnlEBRCLObVaFQvsUd2i\"\r\n      },\r\n    \
+        \  \"redirect\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://localhost:3000/user_landing\"\r\n      },\r\n      \"post\": {\r\
+        \n        \"status\": \"PENDING\",\r\n        \"url\": \"http://170b112c.ngrok.io/api/1/tap/charge\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zw592018928m4D91929110\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"INITIATED\",\r\n      \"\
+        amount\": 1.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\":\
+        \ true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Test Txn 001\",\r\n      \"description\": \"Test Transaction\",\r\n  \
+        \    \"metadata\": {\r\n        \"udf1\": \"Test 1\",\r\n        \"udf2\"\
+        : \"Test 2\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\"\
+        : \"UTC+03:00\",\r\n        \"created\": \"1539941333538\",\r\n        \"\
+        url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=aDUSizVmzpUF4Zf%2fF5uRCiKhDiavxv%2bObhn4OckwYLY%3d&sess=Npgpkj59XNw%3d&token=aDUSizVmzpUF4Zf%2fF5uRCiKhDiavxv%2bOJRbHe%2byWVsY%3d\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"transaction\": \"txn_0001\"\
+        ,\r\n        \"order\": \"ord_0001\"\r\n      },\r\n      \"response\": {\r\
+        \n        \"code\": \"100\",\r\n        \"message\": \"Initiated\"\r\n   \
+        \   },\r\n      \"receipt\": {\r\n        \"email\": false,\r\n        \"\
+        sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"first_name\"\
+        : \"test\",\r\n        \"middle_name\": \"test\",\r\n        \"last_name\"\
+        : \"test\",\r\n        \"email\": \"test@test.com\",\r\n        \"phone\"\
+        : {\r\n          \"country_code\": \"965\",\r\n          \"number\": \"50000000\"\
+        \r\n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"\
+        source\",\r\n        \"id\": \"src_card\"\r\n      },\r\n      \"redirect\"\
+        : {\r\n        \"status\": \"PENDING\",\r\n        \"url\": \"http://return.com/returnurl\"\
+        \r\n      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n\
+        \        \"url\": \"http://return.com/posturl\"\r\n      }\r\n    },\r\n \
+        \   {\r\n      \"id\": \"chg_Zw5920181544c4F20891410\",\r\n      \"object\"\
+        : \"charge\",\r\n      \"live_mode\": false,\r\n      \"api_version\": \"\
+        V1.2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"amount\": 3.88,\r\n\
+        \      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n      \"\
+        save_card\": false,\r\n      \"statement_descriptor\": \"Sample\",\r\n   \
+        \   \"description\": \"Test Description\",\r\n      \"metadata\": {\r\n  \
+        \      \"udf1\": \"test 1\",\r\n        \"udf2\": \"test 2\"\r\n      },\r\
+        \n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n   \
+        \     \"created\": \"1539013474162\"\r\n      },\r\n      \"reference\": {\r\
+        \n        \"transaction\": \"4EF8524D77F04\",\r\n        \"order\": \"4EF8524D77F04\"\
+        \r\n      },\r\n      \"response\": {\r\n        \"code\": \"301\",\r\n  \
+        \      \"message\": \"Abandoned\"\r\n      },\r\n      \"card\": {\r\n   \
+        \     \"object\": \"card\",\r\n        \"first_six\": \"512345\",\r\n    \
+        \    \"last_four\": \"0008\"\r\n      },\r\n      \"receipt\": {\r\n     \
+        \   \"id\": \"2018100815443824\",\r\n        \"email\": false,\r\n       \
+        \ \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"first_name\"\
+        : \"Atul\",\r\n        \"last_name\": \"Gupta\",\r\n        \"email\": \"\
+        atulg@tiinfotech.com\",\r\n        \"phone\": {\r\n          \"country_code\"\
+        : \"965\",\r\n          \"number\": \"9953421086\"\r\n        }\r\n      },\r\
+        \n      \"source\": {\r\n        \"object\": \"token\",\r\n        \"type\"\
+        : \"CARD_PRESENT\",\r\n        \"payment_type\": \"CREDIT_CARD\",\r\n    \
+        \    \"payment_method\": \"MASTERCARD\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"tok_5wZA1VbMRaelxUmKLc63vQB4\"\r\n      },\r\n    \
+        \  \"redirect\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://localhost:18284/TAP/TAPResponse\"\r\n      },\r\n      \"post\"\
+        : {\r\n        \"status\": \"PENDING\",\r\n        \"url\": \"http://localhost:18284/TAP/TAPResponse\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zw542018441Jx950981410\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V1.2\",\r\n      \"status\": \"ABANDONED\",\r\n    \
+        \  \"amount\": 1.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\"\
+        : true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Sample\",\r\n      \"description\": \"Test Description\",\r\n      \"\
+        metadata\": {\r\n        \"udf1\": \"test 1\",\r\n        \"udf2\": \"test\
+        \ 2\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\": \"\
+        UTC+03:00\",\r\n        \"created\": \"1539060083027\"\r\n      },\r\n   \
+        \   \"reference\": {\r\n        \"transaction\": \"txn_0001\",\r\n       \
+        \ \"order\": \"ord_0001\"\r\n      },\r\n      \"response\": {\r\n       \
+        \ \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\r\n      },\r\n\
+        \      \"receipt\": {\r\n        \"id\": \"20181009044124888\",\r\n      \
+        \  \"email\": false,\r\n        \"sms\": false\r\n      },\r\n      \"customer\"\
+        : {\r\n        \"first_name\": \"test\",\r\n        \"middle_name\": \"test\"\
+        ,\r\n        \"last_name\": \"test\",\r\n        \"email\": \"test@test.com\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"50000000\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT_CARD\",\r\n        \"payment_method\"\
+        : \"KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    },\r\n    {\r\n \
+        \     \"id\": \"chg_Zw4l20181528x4R90751210\",\r\n      \"object\": \"charge\"\
+        ,\r\n      \"live_mode\": false,\r\n      \"api_version\": \"V1.2\",\r\n \
+        \     \"status\": \"INITIATED\",\r\n      \"amount\": 1.0,\r\n      \"currency\"\
+        : \"SAR\",\r\n      \"threeDSecure\": true,\r\n      \"save_card\": false,\r\
+        \n      \"statement_descriptor\": \"Test\",\r\n      \"description\": \"Test\"\
+        ,\r\n      \"metadata\": {\r\n        \"udf1\": \"10001\"\r\n      },\r\n\
+        \      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n    \
+        \    \"created\": \"1538926130760\",\r\n        \"url\": \"https://sandbox.payments.tap.company/test_gosell/v2/payment/response.aspx?tap_chg=CjgAZuN%2b3QBC4VjNghRETxlYgthfXUnIOypGnjN9aZo%3d&sess=nZyseX3kQZI%3d&token=CjgAZuN%2b3QBC4VjNghRETxlYgthfXUnIsrPVexFHvVo%3d\"\
+        \r\n      },\r\n      \"reference\": {\r\n        \"transaction\": \"txn_0001\"\
+        ,\r\n        \"order\": \"ord_0001\"\r\n      },\r\n      \"response\": {\r\
+        \n        \"code\": \"100\",\r\n        \"message\": \"Initiated\"\r\n   \
+        \   },\r\n      \"receipt\": {\r\n        \"email\": false,\r\n        \"\
+        sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"first_name\"\
+        : \"test\",\r\n        \"middle_name\": \"test\",\r\n        \"last_name\"\
+        : \"test\",\r\n        \"email\": \"test@test.com\",\r\n        \"phone\"\
+        : {\r\n          \"country_code\": \"965\",\r\n          \"number\": \"50000000\"\
+        \r\n        }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"\
+        source\",\r\n        \"id\": \"src_card\"\r\n      },\r\n      \"redirect\"\
+        : {\r\n        \"status\": \"PENDING\",\r\n        \"url\": \"https://www.bleems.com/kw/\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zw4b2018556Rq9p1713510\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"\
+        amount\": 101.0,\r\n      \"currency\": \"USD\",\r\n      \"threeDSecure\"\
+        : true,\r\n      \"save_card\": false,\r\n      \"description\": \"\",\r\n\
+        \      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n    \
+        \    \"created\": \"1539755799389\"\r\n      },\r\n      \"reference\": {\r\
+        \n        \"track\": \"tck_Hg952018556Mh4y1781510\",\r\n        \"payment\"\
+        : \"pay_k5M42018556g5NH1781510\"\r\n      },\r\n      \"response\": {\r\n\
+        \        \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\r\n    \
+        \  },\r\n      \"card\": {\r\n        \"object\": \"card\",\r\n        \"\
+        first_six\": \"401200\",\r\n        \"last_four\": \"0026\"\r\n      },\r\n\
+        \      \"receipt\": {\r\n        \"id\": \"20181017055644493\",\r\n      \
+        \  \"email\": false,\r\n        \"sms\": false\r\n      },\r\n      \"customer\"\
+        : {\r\n        \"first_name\": \"Joe\",\r\n        \"last_name\": \"Bloggs\"\
+        ,\r\n        \"email\": \"joe@email.com\",\r\n        \"phone\": {\r\n   \
+        \       \"country_code\": \"0\",\r\n          \"number\": \"\"\r\n       \
+        \ }\r\n      },\r\n      \"source\": {\r\n        \"object\": \"token\",\r\
+        \n        \"type\": \"CARD_PRESENT\",\r\n        \"payment_type\": \"CREDIT_CARD\"\
+        ,\r\n        \"payment_method\": \"VISA\",\r\n        \"channel\": \"INTERNET\"\
+        ,\r\n        \"id\": \"tok_Bx2RV6Q1Nq0tbema9jrTPDhc\"\r\n      },\r\n    \
+        \  \"redirect\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://example.com/user_landing\"\r\n      },\r\n      \"post\": {\r\n\
+        \        \"status\": \"PENDING\",\r\n        \"url\": \"http://example.com/tap/charge\"\
+        \r\n      }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zu9q20181421b4RN307808\"\
+        ,\r\n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n    \
+        \  \"api_version\": \"V1.2\",\r\n      \"status\": \"ABANDONED\",\r\n    \
+        \  \"amount\": 100.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\"\
+        : true,\r\n      \"save_card\": false,\r\n      \"statement_descriptor\":\
+        \ \"Sample\",\r\n      \"description\": \"Test Description\",\r\n      \"\
+        metadata\": {\r\n        \"udf1\": \"test 1\",\r\n        \"udf2\": \"test\
+        \ 2\"\r\n      },\r\n      \"transaction\": {\r\n        \"timezone\": \"\
+        UTC+03:00\",\r\n        \"created\": \"1535638880248\"\r\n      },\r\n   \
+        \   \"reference\": {\r\n        \"transaction\": \"txn_0001\",\r\n       \
+        \ \"order\": \"ord_0001\"\r\n      },\r\n      \"response\": {\r\n       \
+        \ \"code\": \"301\",\r\n        \"message\": \"Abandoned\"\r\n      },\r\n\
+        \      \"receipt\": {\r\n        \"id\": \"20180830142121993\",\r\n      \
+        \  \"email\": false,\r\n        \"sms\": false\r\n      },\r\n      \"customer\"\
+        : {\r\n        \"first_name\": \"test\",\r\n        \"middle_name\": \"test\"\
+        ,\r\n        \"last_name\": \"test\",\r\n        \"email\": \"test@test.com\"\
+        ,\r\n        \"phone\": {\r\n          \"country_code\": \"965\",\r\n    \
+        \      \"number\": \"50000000\"\r\n        }\r\n      },\r\n      \"source\"\
+        : {\r\n        \"object\": \"source\",\r\n        \"type\": \"CARD_PRESENT\"\
+        ,\r\n        \"payment_type\": \"DEBIT_CARD\",\r\n        \"payment_method\"\
+        : \"KNET\",\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://localhost/ACMilanWebsiteUI/Default.aspx\"\r\n\
+        \      },\r\n      \"post\": {\r\n        \"status\": \"PENDING\",\r\n   \
+        \     \"url\": \"http://localhost/ACMilanWebsiteUI/Default.aspx\"\r\n    \
+        \  }\r\n    },\r\n    {\r\n      \"id\": \"chg_Zu9p2018926t9H50936510\",\r\
+        \n      \"object\": \"charge\",\r\n      \"live_mode\": false,\r\n      \"\
+        api_version\": \"V1.2\",\r\n      \"status\": \"ABANDONED\",\r\n      \"amount\"\
+        : 1.0,\r\n      \"currency\": \"KWD\",\r\n      \"threeDSecure\": true,\r\n\
+        \      \"save_card\": false,\r\n      \"statement_descriptor\": \"Sample\"\
+        ,\r\n      \"description\": \"Test Description\",\r\n      \"metadata\": {\r\
+        \n        \"udf1\": \"test 1\",\r\n        \"udf2\": \"test 2\"\r\n      },\r\
+        \n      \"transaction\": {\r\n        \"timezone\": \"UTC+03:00\",\r\n   \
+        \     \"created\": \"1539077189596\"\r\n      },\r\n      \"reference\": {\r\
+        \n        \"transaction\": \"txn_0001\",\r\n        \"order\": \"ord_0001\"\
+        \r\n      },\r\n      \"response\": {\r\n        \"code\": \"301\",\r\n  \
+        \      \"message\": \"Abandoned\"\r\n      },\r\n      \"receipt\": {\r\n\
+        \        \"id\": \"20181009092631226\",\r\n        \"email\": false,\r\n \
+        \       \"sms\": false\r\n      },\r\n      \"customer\": {\r\n        \"\
+        first_name\": \"test\",\r\n        \"middle_name\": \"test\",\r\n        \"\
+        last_name\": \"test\",\r\n        \"email\": \"test@test.com\",\r\n      \
+        \  \"phone\": {\r\n          \"country_code\": \"965\",\r\n          \"number\"\
+        : \"50000000\"\r\n        }\r\n      },\r\n      \"source\": {\r\n       \
+        \ \"object\": \"source\",\r\n        \"type\": \"CARD_PRESENT\",\r\n     \
+        \   \"payment_type\": \"DEBIT_CARD\",\r\n        \"payment_method\": \"KNET\"\
+        ,\r\n        \"channel\": \"INTERNET\",\r\n        \"id\": \"src_kw.knet\"\
+        \r\n      },\r\n      \"redirect\": {\r\n        \"status\": \"PENDING\",\r\
+        \n        \"url\": \"http://your_website.com/redirect_url\"\r\n      },\r\n\
+        \      \"post\": {\r\n        \"status\": \"PENDING\",\r\n        \"url\"\
+        : \"http://your_website.com/post_url\"\r\n      }\r\n    }\r\n  ]\r\n}"}
     headers:
       connection: [keep-alive]
-      content-length: ['102']
+      content-length: ['39625']
       content-type: [application/json]
-      date: ['Thu, 22 Nov 2018 02:26:10 GMT']
-      etag: [W/"66-zRWtOynn9uVrAwJ1k0QnIsGXy7A"]
+      date: ['Sat, 24 Nov 2018 20:41:34 GMT']
+      etag: [W/"9ac9-hMZjBasloVeIOj8qbvzfhbqfONg"]
       x-powered-by: [Express]
-    status: {code: 400, message: Bad Request}
+    status: {code: 200, message: OK}
 version: 1
