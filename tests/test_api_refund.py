@@ -4,7 +4,6 @@ import tap
 from tap.api_resources.refund import Refund
 
 
-@pytest.mark.xfail(reason='Not sure why')
 @tap_vcr.use_cassette('refund/create_refund.yaml')
 def test_create_refund(create_customer, create_charge):
     customer = create_customer()
@@ -20,4 +19,4 @@ def test_create_refund(create_customer, create_charge):
 
     refund = tap.Refund.create(**data)
     assert isinstance(refund, Refund)
-    assert charge.object == 'refund'
+    assert refund.object == 'refund'

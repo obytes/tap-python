@@ -53,11 +53,11 @@ def test_update_charge(create_charge, create_customer):
     assert resp.description == data['description']
 
 
-@pytest.mark.xfail(reason='Got this from Tap API: Charge not found')
 @tap_vcr.use_cassette('charge/list_charge.yaml')
 def test_list_charge(create_charge, create_customer):
     customer = create_customer()
     charge = create_charge(customer.id)
+
     data = {
       "period": {
         "date": {
@@ -69,5 +69,5 @@ def test_list_charge(create_charge, create_customer):
       "starting_after": "",
       "limit": 25
     }
-    resp = tap.Charge.list()
-    assert len(resp.customers) > 0
+    resp = tap.Charge.list(**data)
+    assert len(resp.charges) > 0
