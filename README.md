@@ -43,3 +43,9 @@ Success: <Customer customer id=cus_k9RY2018525q5LP1962511 at 0x7f2a495e5990> JSO
   "tap_version": null
 }
 ```
+
+
+Battle tested in
+
+<img src="https://www.barmej.com/press/logo.png" alt="barmej" width="200"/>
+ 
