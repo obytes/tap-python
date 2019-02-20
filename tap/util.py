@@ -1,10 +1,10 @@
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function
 
 import logging
 import sys
 import os
 import re
-import tap
 import tap
 from tap.response import ApiResponse
 
@@ -48,6 +48,7 @@ def _test_or_live_environment():
 def logfmt(props):
     def fmt(key, val):
         # Handle case where val is a bytes or bytesarray
+
         if tap.six.PY3 and hasattr(val, 'decode'):
             val = val.decode('utf-8')
         # Check if val is already a string to avoid re-encoding into
@@ -61,8 +62,8 @@ def logfmt(props):
         # key should already be a string
         if re.search(r'\s', key):
             key = repr(key)
-        return u'{key}={val}'.format(key=key, val=val)
-    return u' '.join([fmt(key, val) for key, val in sorted(props.items())])
+        return unicode('{key}={val}'.format(key=key, val=val), 'utf-8')
+    return ' '.join([fmt(key, val) for key, val in sorted(props.items())])
 
 
 def utf8(value):
