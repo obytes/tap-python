@@ -18,7 +18,7 @@ value:
 >>> import tap
 >>>
 >>> # tap.api_key = os.environ.get('TAP_SECRET_KEY')
->>> tap.api_key = 'sk_test_XKokBfNWv6FIYuTMg5sLPjhJ'
+>>> tap.api_key = 'sk_test_YOUR_KEY'
 >>>
 >>> resp = tap.Customer.create(
 ...     first_name='first name',
