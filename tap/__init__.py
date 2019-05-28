@@ -12,11 +12,11 @@ max_network_retries = 0
 log = None
 
 
-from api_resources.customer import Customer
-from api_resources.token import Token
-from api_resources.charge import Charge
-from api_resources.card import Card
-from api_resources.refund import Refund
+from .api_resources.customer import Customer
+from .api_resources.token import Token
+from .api_resources.charge import Charge
+from .api_resources.card import Card
+from .api_resources.refund import Refund
 
 
 from tap.api_resources import *  # noqa

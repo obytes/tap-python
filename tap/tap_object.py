@@ -1,6 +1,6 @@
-import six
-import api_requestor
-import util
+from . import six
+from . import api_requestor
+from . import util
 import json
 
 
