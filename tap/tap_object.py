@@ -1,3 +1,6 @@
+from builtins import hex
+from builtins import str
+
 from . import six
 from . import api_requestor
 from . import util

@@ -1,9 +1,10 @@
 from __future__ import absolute_import, division, print_function
 
+from builtins import object
 import json
 
 
-class ApiResponse:
+class ApiResponse(object):
 
     def __init__(self, body, code, headers):
         self.body = body
