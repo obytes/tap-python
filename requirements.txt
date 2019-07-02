@@ -5,3 +5,4 @@ pytest-xdist >= 1.22
 pytest-cov >= 2.5
 vcrpy==1.10.0
 Faker==0.7.3
+future>=0.17.1
