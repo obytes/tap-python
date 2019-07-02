@@ -6,4 +6,4 @@ def test_logfmt():
         'message': 'API response body'
     }
     logged = logfmt(props)
-    "Ø¥Ø´ØªÙØ§Ù".decode('utf-8') in logged
+    "Ø¥Ø´ØªÙØ§Ù" in logged

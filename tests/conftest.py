@@ -10,7 +10,7 @@ def create_token():
         data = {
             "card": {
                 "number": card_number,
-                "exp_month": 05,
+                "exp_month": 0o5,
                 "exp_year": 21,
                 "cvc": cvc,
             }
