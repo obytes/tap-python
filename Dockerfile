@@ -10,6 +10,8 @@ RUN apk add --update curl \
     imagemagick \
     imagemagick-dev
 
+RUN pip install --upgrade pip
+
 # build-base
 COPY requirements.txt /opt/pip/requirements.txt
 RUN pip install -r /opt/pip/requirements.txt
