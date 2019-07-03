@@ -1,4 +1,4 @@
-from abstract import APIResource
+from .abstract import APIResource
 
 
 class Card(APIResource):

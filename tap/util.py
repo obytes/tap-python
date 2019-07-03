@@ -62,7 +62,7 @@ def logfmt(props):
         # key should already be a string
         if re.search(r'\s', key):
             key = repr(key)
-        return unicode('{key}={val}'.format(key=key, val=val), 'utf-8')
+        return '{key}={val}'.format(key=key, val=val)
     return ' '.join([fmt(key, val) for key, val in sorted(props.items())])
 
 

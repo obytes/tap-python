@@ -1,4 +1,4 @@
-from abstract import CreateableAPIResource
+from .abstract import CreateableAPIResource
 
 
 class Token(CreateableAPIResource):
